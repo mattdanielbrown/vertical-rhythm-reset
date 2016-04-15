@@ -17,6 +17,7 @@ Vertical Rhythm Reset is the perfect starting point for implementing responsive 
 ## Features
 
 - **Fast-and-easy implementation**
+
   As little as two lines of code provide a CSS foundation that standardizes the presentation of HTML5 elements across desktop and mobile browsers, aligns elements to a vertical rhythm grid, provides a harmonious range of modular scale font sizes, and adjusted grid and font values for small, medium and large screens.
 
 - **Easily maintainable vertical rhythm grids**
@@ -24,12 +25,15 @@ Vertical Rhythm Reset is the perfect starting point for implementing responsive 
   Vertical rhythm grids provide visual symmetry by aligning elements to an invisible-yet-recognizable layout pattern. Aligning text elements to the grid can be done relatively easily with vanilla CSS, but alignment becomes increasingly challenging once images, borders, margins, padding or a range of font sizes are introduced. Vertical Rhythm Reset simplifies grid alignment by providing a single mixin that does all of the heavy lifting for you, calculating the CSS property values needed to ensure proper grid alignment.
 
 - **Harmonious modular scale based typography**
+
   Modular scale typography provides a harmonious range of proportional font sizes. This calculated range of font sizes helps answer the question, "What font-sizes should I use for this project?" by providing a visually pleasing range of font sizes to choose from. Vertical Rhythm Reset provides modular scale typography with the ability to customize settings across multiple breakpoints for responsive layouts.
 
 - **CSS reset/normalization for mobile and desktop browsers**
+
   Sensible and non-opinionated CSS reset/normalization rules standardize the default presentation of HTML elements across desktop and mobiles browsers. These rules also ensure all all element align to a vertical rhythm grid by default.
 
 - **Auto-generated media queries and breakpoint values for responsive layouts**
+
   A single map provides the flexibility to define the font-size, line-height, modular scale and (optional) grid color for multiple breakpoints. Mixins intelligently generate media queries and recalculated values for each breakpoint each time alignment properties are specified in your SCSS.
 
 - **Smart mixins for efficient, pixel-perfect CSS output**
@@ -37,9 +41,11 @@ Vertical Rhythm Reset is the perfect starting point for implementing responsive 
   The mixins provide by Vertical Rhythm Reset know when media queries and recalculated values need to be generated and when existing rules will work across breakpoints. These mixins also handle rounding errors that vary across browsers and leverage CSS shorthand notation when possible to keep your production CSS as lightweight and efficient as possible.
 
 - **Helper classes and rules**
+
   Helper rules and classes provide a convenient way to set typography and vertical rhythm properties using CSS class names and HTML properties. This makes it easy to quickly change the font size, specify the height, or add margins and padding to HTML elements without using the Sass mixin.
 
 - **Detailed developer documentation**
+
   Full documentation is available for all variables and mixins courtesy of [SassDoc](http://sassdoc.com/), making integration with your existing project documentation effortless.
 
 
@@ -624,3 +630,4 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
