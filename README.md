@@ -1,6 +1,4 @@
 # Vertical Rhythm Reset
-Simple, flexible and *easily maintainable* responsive vertical rhythm grids and modular scale typography.
-
 Vertical Rhythm Reset is the perfect starting point for implementing responsive vertical rhythm grids and modular scale typography. Simple implementation, flexible customization options, optimized CSS output, smart mixins for effortless grid alignment and a range of helper classes provide a robust and easily maintainable foundation on which to build upon.
 
 ------
@@ -11,7 +9,7 @@ Vertical Rhythm Reset is the perfect starting point for implementing responsive 
 - [Quick Start](#quick-start)
 - [Customization](#customization)
 - [Mixins](#mixins)
-- [Credits & Attribution](#credits-and-attribution)
+- [Credits & Attribution](#credits--attribution)
 - [License](#license)
 
 ------
@@ -45,8 +43,6 @@ Vertical Rhythm Reset is the perfect starting point for implementing responsive 
   Full documentation is available for all variables and mixins courtesy of [SassDoc](http://sassdoc.com/), making integration with your existing project documentation effortless.
 
 
-
-
 ## Browser Compatibility
 
 Vertical Rhythm Reset is compatible with "evergreen" browsers such as Chrome, Edge, Firefox and Safari as well as legacy browsers such as IE9+. Combined these browsers account for [over 98% of browsers in use today](http://gs.statcounter.com/#desktop+tablet-browser_version_partially_combined-ww-monthly-201601-201603-bar).
@@ -56,8 +52,6 @@ Vertical Rhythm Reset is compatible with "evergreen" browsers such as Chrome, Ed
 - Firefox 4+
 - Internet Explorer 9+
 - Safari 6+
-
-
 
 
 ## Installation
@@ -82,8 +76,6 @@ git clone https://github.com/jhildenbiddle/vertical-rhythm-reset.git
 
 [Download](https://github.com/jhildenbiddle/vertical-rhythm-reset/archive/master.zip) the latest source code in zip format.
 
-
-
 ## Quick Start
 
 **Default Settings**
@@ -106,7 +98,7 @@ The default settings provide a sensible starting point for new projects:
 1. Import Vertical Rhythm Reset:
 
    ```scss
-     @import "path/to/vertical-rhythm-reset";
+         @import "path/to/vertical-rhythm-reset";
    ```
 
 2. Call the `vr-reset()` [mixin](#vr-reset) at the root to generate the CSS reset/normalization rules:
@@ -435,8 +427,6 @@ textarea[rows="1"],
 <div class="vr-offset-bottom-1">...</div>
 ```
 
-
-
 ## Mixins
 
 ### vr-reset()
@@ -500,12 +490,12 @@ See [SassDoc documentation](#) for additional details.
 
 **Arguments**
 
-| Name         | Description                              | Type    | Default                      |
-| ------------ | ---------------------------------------- | ------- | ---------------------------- |
-| `$color`     | Grid line and element highlight color    | Color   | `$vr&#8209;grid&#8209;color` |
-| `$lines`     | Displays vertical rhythm grid lines      | Boolean | `true`                       |
-| `$highlight` | Sets the background color of all elements to a semi-transparent variation of the grid color specified to help verify alignment with the vertical rhythm grid. | Boolean | `true`                       |
-| `$detail`    | Displays a floating panel with the active breakpoint width, font-size, line-height and modular scale. This is rendered as psuedo content (`:before`) on the `<body>` element. | Boolean | `true`                       |
+| Name         | Description                              | Type    | Default          |
+| ------------ | ---------------------------------------- | ------- | ---------------- |
+| `$color`     | Grid line and element highlight color    | Color   | `$vr‑grid‑color` |
+| `$lines`     | Displays vertical rhythm grid lines      | Boolean | `true`           |
+| `$highlight` | Sets the background color of all elements to a semi-transparent variation of the grid color specified to help verify alignment with the vertical rhythm grid. | Boolean | `true`           |
+| `$detail`    | Displays a floating panel with the active breakpoint width, font-size, line-height and modular scale. This is rendered as psuedo content (`:before`) on the `<body>` element. | Boolean | `true`           |
 
 **SASS**
 
@@ -515,7 +505,7 @@ See [SassDoc documentation](#) for additional details.
 
 // Call the grid mixin
 body {
-  @include @vr-grid();
+  @include vr-grid();
 }
 ```
 
@@ -615,16 +605,12 @@ See [SassDoc documentation](#) for additional details.
 }
 ```
 
-
-
 ## Credits & Attribution
 
 - [Normalize.css](https://necolas.github.io/normalize.css) by Nicolas Gallagher and Jonathan Neal.
 - [Modular Scale](http://www.modularscale.com/) by Scott Vellum and Tim Brown.
 - [*Groove to a Vertical Rhythm*](http://inlehmansterms.net/2014/06/09/groove-to-a-vertical-rhythm) by Jonathan Lehman.
 - [*Optimizing SVGs in data URIs*](http://codepen.io/tigt/post/optimizing-svgs-in-data-uris) by Taylor Hunt.
-
-
 
 
 ## License
