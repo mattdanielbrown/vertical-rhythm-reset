@@ -24,7 +24,7 @@ Vertical Rhythm Reset is the perfect starting point for implementing responsive 
 
   Vertical rhythm grids provide visual symmetry by aligning elements to an invisible-yet-recognizable layout pattern. Aligning text elements to the grid can be done relatively easily with vanilla CSS, but alignment becomes increasingly challenging once images, borders, margins, padding or a range of font sizes are introduced. Vertical Rhythm Reset simplifies grid alignment by providing a single mixin that does all of the heavy lifting for you, calculating the CSS property values needed to ensure proper grid alignment.
 
-- **Harmonious modular scale based typography**
+- **Modular scale typography**
 
   Modular scale typography provides a harmonious range of proportional font sizes. This calculated range of font sizes helps answer the question, "What font-sizes should I use for this project?" by providing a visually pleasing range of font sizes to choose from. Vertical Rhythm Reset provides modular scale typography with the ability to customize settings across multiple breakpoints for responsive layouts.
 
