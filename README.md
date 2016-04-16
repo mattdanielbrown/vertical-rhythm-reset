@@ -1,6 +1,8 @@
 # Vertical Rhythm Reset
 Vertical Rhythm Reset is the perfect starting point for implementing responsive vertical rhythm grids and modular scale typography. Simple implementation, flexible customization options, optimized CSS output, smart mixins for effortless grid alignment and a range of helper classes provide a robust and easily maintainable foundation on which to build upon.
 
+In addition to the usual implementation details, the documentation below also explains how Vertical Rhythm Reset works. This increases the documentation length which could imply complexity, but the intention is to prevent the system from being a "[black box](https://en.wikipedia.org/wiki/Black_box)" for developers.
+
 ------
 
 - [Features](#features)
@@ -42,7 +44,7 @@ Vertical Rhythm Reset is the perfect starting point for implementing responsive 
 
 - **Helper classes and rules**
 
-  Helper rules and classes provide a convenient way to set typography and vertical rhythm properties using CSS class names and HTML properties. This makes it easy to quickly change the font size, specify the height, or add margins and padding to HTML elements without using the Sass mixin.
+  Helper rules and classes provide a convenient way to set typography and vertical rhythm properties using CSS class names and HTML properties. This makes it easy to quickly change the font size, specify the height, or add margins and padding to HTML elements without creating new CSS/SCSS rules.
 
 - **Detailed developer documentation**
 
@@ -101,10 +103,10 @@ The default settings provide a sensible starting point for new projects:
 
 **Applying the vertical rhythm reset**
 
-1. Import Vertical Rhythm Reset:
+1. Import Vertical Rhythm Reset.
 
    ```scss
-         @import "path/to/vertical-rhythm-reset";
+   @import "path/to/vertical-rhythm-reset";
    ```
 
 2. Call the `vr-reset()` [mixin](#vr-reset) at the root to generate the CSS reset/normalization rules:
@@ -113,10 +115,10 @@ The default settings provide a sensible starting point for new projects:
    @include vr-reset();
    ```
 
-3. Use the `vr()` [mixin](#vr) to align elements to the vertical rhythm grid and set the font-size to a modular scale multiple:
+3. Use the `vr()` [mixin](#vr) to align elements to the vertical rhythm grid and set the font-size to a modular scale multiple.
 
    ```scss
-   div {
+   .myclass {
      @include vr(
        $font-size: 2,
        $height   : 5,
@@ -126,7 +128,7 @@ The default settings provide a sensible starting point for new projects:
    }
    ```
 
-4. Use the  the `vr-grid()` [mixin](#vr-grid) to view the vertical rhythm grid overlay:
+4. Use the  the `vr-grid()` [mixin](#vr-grid) to view the vertical rhythm grid overlay.
 
    ```scss
    body {
@@ -144,7 +146,7 @@ For complete details on variable and mixin settings, please review the [SassDoc 
 
 ### Box Sizing
 
-The `$vr-box-sizing` global variable is used to generate a CSS rule that applies the box-sizing method to all elements when the `vr-reset` mixin is called. The box-sizing method is also used in the `vr` mixin to calculate border offset values.
+The `$vr-box-sizing` global variable is used to generate a CSS rule that applies the box-sizing method to all elements when the `vr-reset()` [mixin](#vr-reset) is called. The box-sizing method is also used in the `vr()` [mixin](#vr) to calculate border offset values.
 
 **SCSS**
 
