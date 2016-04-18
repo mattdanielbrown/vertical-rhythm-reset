@@ -1,7 +1,10 @@
 # Vertical Rhythm Reset
-The perfect starting point for responsive vertical rhythm grids and modular scale typography. 
+The perfect starting point for CSS normalization, responsive vertical rhythm grids and modular scale typography. 
 
 Simple implementation, flexible customization options, optimized CSS output, smart mixins for effortless grid alignment and a range of helper classes provide a robust and maintainable foundation on which to build upon.
+
+- [**Home Page**](http://jhildenbiddle.github.io/vertical-rhythm-reset/)
+- [**SassDocs**](http://jhildenbiddle.github.io/vertical-rhythm-reset/sassdoc/)
 
 ------
 
@@ -59,7 +62,7 @@ The default settings provide a sensible starting point for new projects:
 1. Import Vertical Rhythm Reset.
 
    ```scss
-       @import "path/to/vertical-rhythm-reset";
+         @import "path/to/vertical-rhythm-reset";
    ```
 
 2. Call the `vr-reset()` [mixin](#vr-reset) at the root to generate the CSS reset/normalization rules:
