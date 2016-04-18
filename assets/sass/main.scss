@@ -102,18 +102,18 @@ a {
     &:before {
         content: '';
         position: absolute;
+        right: 50%;
         left: 50%;
         bottom: -3px;
-        width: 0;
         border-bottom: 1px solid $color-link-default;
         opacity: 0;
-        transform: translateX(-50%);
         transition: all $time-fast;
     }
 
     &:hover {
         &:before {
-            width: 100%;
+            right: 0;
+            left: 0;
             opacity: 1;
         }
     }

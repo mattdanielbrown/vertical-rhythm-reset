@@ -816,17 +816,17 @@ a {
 a:before {
   content: '';
   position: absolute;
+  right: 50%;
   left: 50%;
   bottom: -3px;
-  width: 0;
   border-bottom: 1px solid #1976d2;
   opacity: 0;
-  transform: translateX(-50%);
   transition: all 0.25s;
 }
 
 a:hover:before {
-  width: 100%;
+  right: 0;
+  left: 0;
   opacity: 1;
 }
 
