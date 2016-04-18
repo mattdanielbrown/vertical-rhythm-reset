@@ -4,7 +4,7 @@
   "description": "The perfect starting point for CSS normalization, responsive vertical rhythm grids and modular scale typography. ",
   "author": "John Hildenbiddle",
   "license": "MIT",
-  "homepage": "https://github.com/jhildenbiddle/vertical-rhythm-reset#readme",
+  "homepage": "http://jhildenbiddle.github.io/vertical-rhythm-reset/",
   "repository": {
     "type": "git",
     "url": "git+https://jhildenbiddle@github.com/jhildenbiddle/vertical-rhythm-reset.git"
