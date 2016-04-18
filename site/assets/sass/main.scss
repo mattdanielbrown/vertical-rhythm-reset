@@ -1,0 +1,266 @@
+@charset 'utf-8';
+
+// Imports
+// =============================================================================
+@import 'vertical-rhythm-reset';
+
+// Variables
+// =============================================================================
+// Vertical Rhythm Reset
+// -----------------------------------------------------------------------------
+// $vr-font-size    : 15px;
+// $vr-line-height  : 1.25;
+// $vr-modular-scale: false;
+// $vr-breakpoints  : false;
+// $vr-helpers      : false;
+
+// Color: Palette
+// -----------------------------------------------------------------------------
+$color-accent-primary: $vr-grid-color;
+$color-white-soft    : #f7f7f7;
+$color-gray-soft     : #ccc;
+$color-gray-dark     : #444;
+$color-black-soft    : #222;
+
+// Color: Text
+// -----------------------------------------------------------------------------
+$color-text-base   : $color-gray-dark;
+$color-text-dark   : $color-black-soft;
+$color-link-default: #1976d2;
+
+// Timing
+$time-fast: 0.25s;
+
+// Base
+// =============================================================================
+@include vr-reset();
+
+body {
+    color: $color-text-base;
+    font-family: -apple-system, BlinkMacSystemFont,
+        'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+        'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+
+    // Vertical Rhythm Grid
+    &.grid-lines {
+        @include vr-grid($lines: true, $highlight: false, $detail: false);
+    }
+
+    &.grid-highlight {
+        @include vr-grid($lines: false, $highlight: true, $detail: false);
+
+        // Highlight overrride
+        header,
+        main,
+        section,
+        footer,
+        .max-width {
+            background-color: transparent !important;
+        }
+    }
+
+    &.grid-detail {
+        @include vr-grid($lines: false, $highlight: false, $detail: true);
+    }
+
+    > header {
+        @include vr(
+            $margin-top: 2
+        );
+
+        h2 {
+            color: $color-accent-primary;
+        }
+    }
+
+    > footer {
+        text-align: center;
+
+        iframe[src*="github.io"],
+        iframe[src*="twitter.com"] {
+            @include vr(
+                $height       : 28px,
+                $margin-bottom: 1
+            );
+        }
+    }
+}
+
+body > header,
+main > section,
+body > footer {
+    padding-right: 10%;
+    padding-left: 10%;
+}
+
+a {
+    position: relative;
+    color: $color-link-default;
+    text-decoration: none;
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -3px;
+        width: 0;
+        border-bottom: 1px solid $color-link-default;
+        opacity: 0;
+        transform: translateX(-50%);
+        transition: all $time-fast;
+    }
+
+    &:hover {
+        &:before {
+            width: 100%;
+            opacity: 1;
+        }
+    }
+}
+
+h1, h2, h3, h4 {
+    color: $color-text-dark;
+}
+
+// Helpers
+// =============================================================================
+.max-width {
+    max-width: 55rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.button {
+    @include vr(
+        $font-size : -1,
+        $margin    : 1 auto null auto,
+        $padding   : 0.5 1,
+        $offset    : 1px
+    );
+
+    display: block;
+    width: 80%;
+    border: 1px solid $color-gray-soft;
+    border-radius: 3px;
+    color: $color-text-dark;
+    font-weight: 600;
+    text-align: center;
+    transition: all $time-fast;
+
+    &:before {
+        content: none;
+    }
+
+    &:hover {
+        border-color: $color-accent-primary;
+    }
+}
+
+.buttongroup {
+    @include vr(
+        $margin: 2 null
+    );
+}
+
+// Features
+// =============================================================================
+.features {
+    @include vr(
+        $padding: 1 null,
+        $offset : 1
+    );
+
+    border-width: 1px 0 1px 0;
+    border-style: solid;
+    border-color: $color-gray-soft;
+    background: $color-white-soft;
+
+    ul {
+        padding: 0;
+    }
+
+    h3 {
+        @include vr(
+            $font-size: 0
+        );
+
+        font-weight: 600;
+    }
+
+    h4 {
+        @include vr(
+            $font-size: 0
+        );
+
+        color: $color-accent-primary;
+    }
+}
+
+// Demo
+// =============================================================================
+.demo {
+    @include vr(
+        $padding: 2 null
+    );
+
+    header {
+        position: relative;
+    }
+
+    h1 {
+        vertical-align: bottom;
+    }
+
+    iframe {
+        @include vr(
+            $height: 600px
+        );
+
+        border-bottom: 1px solid #eee;
+    }
+}
+
+// Breakpoint: Medium
+// - Decrease page padding
+// - Display buttons horizontally
+// - Switch features to grid
+// =============================================================================
+@media (min-width: 48em) { // 600px
+    // Decrease page padding
+    body > header,
+    main > section,
+    body > footer {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
+    // Display buttons horizontally
+    .button {
+        display: inline-block;
+        width: auto;
+        margin-top: 0;
+        margin-right: 1rem;
+    }
+
+    // Switch features to grid
+    .features {
+        padding-top: 0;
+        padding-bottom: 0;
+
+        ul {
+            overflow: auto;
+        }
+
+        li {
+            float: left;
+            width: calc(50% - #{3rem / 2});
+            list-style: none;
+
+            &:nth-child(odd) {
+                clear: both;
+                margin-right: 3rem;
+            }
+        }
+    }
+}

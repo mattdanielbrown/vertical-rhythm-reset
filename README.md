@@ -1,66 +1,19 @@
 # Vertical Rhythm Reset
-Vertical Rhythm Reset is the perfect starting point for implementing responsive vertical rhythm grids and modular scale typography. Simple implementation, flexible customization options, optimized CSS output, smart mixins for effortless grid alignment and a range of helper classes provide a robust and easily maintainable foundation on which to build upon.
+The perfect starting point for responsive vertical rhythm grids and modular scale typography. 
 
-In addition to the usual implementation details, the documentation below also explains how Vertical Rhythm Reset works. This increases the documentation length which could imply complexity, but the intention is to prevent the system from being a "[black box](https://en.wikipedia.org/wiki/Black_box)" for developers.
+Simple implementation, flexible customization options, optimized CSS output, smart mixins for effortless grid alignment and a range of helper classes provide a robust and maintainable foundation on which to build upon.
 
 ------
 
-- [Features](#features)
-- [Browser Compatibility](#browser-compatibility)
 - [Installation](#installation)
 - [Quick Start](#quick-start)
 - [Customization](#customization)
 - [Mixins](#mixins)
+- [Browser Compatibility](#browser-compatibility)
 - [Credits & Attribution](#credits--attribution)
 - [License](#license)
 
 ------
-
-## Features
-
-- **Fast-and-easy implementation**
-
-  As little as two lines of code provide a CSS foundation that standardizes the presentation of HTML5 elements across desktop and mobile browsers, aligns elements to a vertical rhythm grid, provides a harmonious range of modular scale font sizes, and adjusted grid and font values for small, medium and large screens.
-
-- **Easily maintainable vertical rhythm grids**
-
-  Vertical rhythm grids provide visual symmetry by aligning elements to an invisible-yet-recognizable layout pattern. Aligning text elements to the grid can be done relatively easily with vanilla CSS, but alignment becomes increasingly challenging once images, borders, margins, padding or a range of font sizes are introduced. Vertical Rhythm Reset simplifies grid alignment by providing a single mixin that does all of the heavy lifting for you, calculating the CSS property values needed to ensure proper grid alignment.
-
-- **Modular scale typography**
-
-  Modular scale typography provides a harmonious range of proportional font sizes. This calculated range of font sizes helps answer the question, "What font-sizes should I use for this project?" by providing a visually pleasing range of font sizes to choose from. Vertical Rhythm Reset provides modular scale typography with the ability to customize settings across multiple breakpoints for responsive layouts.
-
-- **CSS reset/normalization for mobile and desktop browsers**
-
-  Sensible and non-opinionated CSS reset/normalization rules standardize the default presentation of HTML elements across desktop and mobiles browsers. These rules also ensure all all element align to a vertical rhythm grid by default.
-
-- **Auto-generated media queries and breakpoint values for responsive layouts**
-
-  A single map provides the flexibility to define the font-size, line-height, modular scale and (optional) grid color for multiple breakpoints. Mixins intelligently generate media queries and recalculated values for each breakpoint each time alignment properties are specified in your SCSS.
-
-- **Smart mixins for efficient, pixel-perfect CSS output**
-
-  The mixins provide by Vertical Rhythm Reset know when media queries and recalculated values need to be generated and when existing rules will work across breakpoints. These mixins also handle rounding errors that vary across browsers and leverage CSS shorthand notation when possible to keep your production CSS as lightweight and efficient as possible.
-
-- **Helper classes and rules**
-
-  Helper rules and classes provide a convenient way to set typography and vertical rhythm properties using CSS class names and HTML properties. This makes it easy to quickly change the font size, specify the height, or add margins and padding to HTML elements without creating new CSS/SCSS rules.
-
-- **Detailed developer documentation**
-
-  Full documentation is available for all variables and mixins courtesy of [SassDoc](http://sassdoc.com/), making integration with your existing project documentation effortless.
-
-
-## Browser Compatibility
-
-Vertical Rhythm Reset is compatible with "evergreen" browsers such as Chrome, Edge, Firefox and Safari as well as legacy browsers such as IE9+. Combined these browsers account for [over 98% of browsers in use today](http://gs.statcounter.com/#desktop+tablet-browser_version_partially_combined-ww-monthly-201601-201603-bar).
-
-- Chrome 19+
-- Edge
-- Firefox 4+
-- Internet Explorer 9+
-- Safari 6+
-
 
 ## Installation
 
@@ -106,7 +59,7 @@ The default settings provide a sensible starting point for new projects:
 1. Import Vertical Rhythm Reset.
 
    ```scss
-   @import "path/to/vertical-rhythm-reset";
+       @import "path/to/vertical-rhythm-reset";
    ```
 
 2. Call the `vr-reset()` [mixin](#vr-reset) at the root to generate the CSS reset/normalization rules:
@@ -115,7 +68,7 @@ The default settings provide a sensible starting point for new projects:
    @include vr-reset();
    ```
 
-3. Use the `vr()` [mixin](#vr) to align elements to the vertical rhythm grid and set the font-size to a modular scale multiple.
+3. Use the `vr()` [mixin](#vr) when specifying font-size, height, margins, padding and border offers to align elements to the vertical rhythm grid:
 
    ```scss
    .myclass {
@@ -135,8 +88,6 @@ The default settings provide a sensible starting point for new projects:
      @include vr-grid();
    }
    ```
-
-
 
 ## Customization
 
@@ -533,6 +484,7 @@ See [SassDoc documentation](#) for additional details.
 | Name              | Description                              | Type                       | Default |
 | ----------------- | ---------------------------------------- | -------------------------- | ------- |
 | `$font‑size`      | Modular scale font size (number) or custom font size (px\|rem\|%) | Length(px\|rem\|%), Number | `null`  |
+| `$line-height`    | Line height                              | Number                     | `null`  |
 | `$height`         | Vertical rhythm row height (number) or fixed height (px) | Length(px), Number         | `null`  |
 | `$margin`         | Margin ([shorthand](https://developer.mozilla.org/en-US/docs/Web/CSS/margin)) | Length\|List\|Number       | `null`  |
 | `$margin‑top`     | Margin top                               | Length\|Number             | `null`  |
@@ -613,13 +565,22 @@ See [SassDoc documentation](#) for additional details.
 }
 ```
 
+## Browser Compatibility
+
+Vertical Rhythm Reset is compatible with "evergreen" browsers such as Chrome, Edge, Firefox and Safari as well as legacy browsers such as IE9+. Combined these browsers account for [over 98% of browsers in use today](http://gs.statcounter.com/#desktop+tablet-browser_version_partially_combined-ww-monthly-201601-201603-bar).
+
+- Chrome 19+
+- Edge
+- Firefox 4+
+- Internet Explorer 9+
+- Safari 6+
+
 ## Credits & Attribution
 
 - [Normalize.css](https://necolas.github.io/normalize.css) by Nicolas Gallagher and Jonathan Neal.
 - [Modular Scale](http://www.modularscale.com/) by Scott Vellum and Tim Brown.
 - [*Groove to a Vertical Rhythm*](http://inlehmansterms.net/2014/06/09/groove-to-a-vertical-rhythm) by Jonathan Lehman.
 - [*Optimizing SVGs in data URIs*](http://codepen.io/tigt/post/optimizing-svgs-in-data-uris) by Taylor Hunt.
-
 
 ## License
 
@@ -632,4 +593,3 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-

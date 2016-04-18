@@ -1,0 +1,46 @@
+{
+  "name": "vertical-rhythm-reset",
+  "version": "1.0.0",
+  "description": "The perfect starting point for CSS normalization, responsive vertical rhythm grids and modular scale typography. ",
+  "author": "John Hildenbiddle",
+  "license": "MIT",
+  "homepage": "https://github.com/jhildenbiddle/vertical-rhythm-reset#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://jhildenbiddle@github.com/jhildenbiddle/vertical-rhythm-reset.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jhildenbiddle/vertical-rhythm-reset/issues"
+  },
+  "keywords": [
+    "css",
+    "font",
+    "grid",
+    "modular",
+    "normalize",
+    "reset",
+    "rhythm",
+    "typography",
+    "sass",
+    "scale",
+    "scss",
+    "vertical"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run sass-build & npm run sassdoc-build",
+    "deploy": "gh-pages -d site",
+    "sass-build": "node-sass -wr --include-path dist --output-style expanded site/assets/sass -o site/assets/css",
+    "sassdoc-build": "nodemon --watch dist -e scss -x 'sassdoc ./dist -d ./site/sassdoc'",
+    "serve": "browser-sync start --server 'site' --files 'site/**/*.{css,html}' --no-open --no-notify",
+    "start": "npm run serve & npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.12.3",
+    "gh-pages": "^0.11.0",
+    "node-sass": "^3.4.2",
+    "nodemon": "^1.9.1",
+    "sassdoc": "^2.1.20"
+  }
+}
