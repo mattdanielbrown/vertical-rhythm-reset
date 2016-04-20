@@ -8,13 +8,15 @@
   padding-top: 0;
   padding-bottom: 0;
   font: inherit;
+  vertical-align: bottom;
 }
 
 html {
   box-sizing: border-box;
   font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
 body {
@@ -56,24 +58,9 @@ sup {
   line-height: 0;
 }
 
-iframe,
-select[multiple],
-textarea {
-  vertical-align: top;
-}
-
-audio,
-button,
-code,
-img,
-input:not([type="radio"]):not([type="checkbox"]),
-kbd,
-pre,
-samp,
-select:not([multiple]),
-small,
-video {
-  vertical-align: bottom;
+input[type="radio"],
+input[type="checkbox"] {
+  margin-bottom: 0.325em;
 }
 
 hr {
@@ -693,7 +680,7 @@ body:before {
   padding: 10px 20px !important;
   background: rgba(233, 30, 99, 0.8) !important;
   border-radius: 4px !important;
-  color: #000 !important;
+  color: #fff !important;
   font-family: "Lucida Console", "Consolas", Monaco, monospace !important;
   font-size: 12px !important;
   line-height: 20px !important;
@@ -721,7 +708,7 @@ body *:not(hr) {
     padding: 10px 20px !important;
     background: rgba(233, 30, 99, 0.8) !important;
     border-radius: 4px !important;
-    color: #000 !important;
+    color: #fff !important;
     font-family: "Lucida Console", "Consolas", Monaco, monospace !important;
     font-size: 12px !important;
     line-height: 20px !important;
@@ -745,7 +732,7 @@ body *:not(hr) {
     padding: 10px 20px !important;
     background: rgba(233, 30, 99, 0.8) !important;
     border-radius: 4px !important;
-    color: #000 !important;
+    color: #fff !important;
     font-family: "Lucida Console", "Consolas", Monaco, monospace !important;
     font-size: 12px !important;
     line-height: 20px !important;
