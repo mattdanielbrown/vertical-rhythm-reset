@@ -26,12 +26,6 @@ Download using [NPM](https://www.npmjs.com/):
 npm install vertical-rhythm-reset --save
 ```
 
-Download using [Bower](http://bower.io/):
-
-```shell
-bower install vertical-rhythm-reset
-```
-
 Clone this repository:
 
 ```shell
