@@ -928,12 +928,14 @@ body > header {
   padding-bottom: 4.50003rem;
 }
 
-.intro .checkbox {
+.intro .grid-toggle-wrap {
   margin-top: 3.00002rem;
   margin-bottom: 3.00002rem;
-  display: block;
-  margin-right: 2rem;
   text-align: center;
+}
+
+.intro .checkbox {
+  margin-right: 2rem;
 }
 
 .features {
@@ -1010,9 +1012,9 @@ body > footer iframe[src*="twitter.com"] {
     font-size: 2.48832rem;
     line-height: 3.00001rem;
   }
-  .intro .checkbox {
+  .intro .grid-toggle-wrap {
     margin-top: 1.50001rem;
-    display: inline-block;
+    text-align: left;
   }
   .button {
     display: inline-block;

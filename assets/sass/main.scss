@@ -274,14 +274,15 @@ body > header {
         $padding-bottom: 3
     );
 
-    .checkbox {
+    .grid-toggle-wrap {
         @include vr(
             $margin: 2 null
         );
-
-        display: block;
-        margin-right: 2rem;
         text-align: center;
+    }
+
+    .checkbox {
+        margin-right: 2rem;
     }
 }
 
@@ -368,12 +369,12 @@ body > footer {
 
     // Left align checkbox
     .intro {
-        .checkbox {
+        .grid-toggle-wrap {
             @include vr(
                 $margin-top: 1
             );
 
-            display: inline-block;
+            text-align: left;
         }
     }
 
