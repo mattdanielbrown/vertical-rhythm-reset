@@ -224,6 +224,9 @@ textarea[rows=&quot;1&quot;],
     $vr-padding-top   : if(type-of($vr-padding-top) == &#39;number&#39; and _strip-unit($vr-padding-top) == 0, _strip-unit($vr-padding-top) * 1px, $vr-padding-top);
     $vr-padding-bottom: if(type-of($vr-padding-bottom) == &#39;number&#39; and _strip-unit($vr-padding-bottom) == 0, _strip-unit($vr-padding-bottom) * 1px, $vr-padding-bottom);
 
+    // Create accessible height multiplier variable for breakpoint check
+    $fixed-multiplier: null;
+
     // Checks
     $is-vr-margin : if($vr-margin-top or $vr-margin-bottom, true, false);
     $is-vr-padding: if($vr-padding-top or $vr-padding-bottom, true, false);
@@ -253,10 +256,11 @@ textarea[rows=&quot;1&quot;],
 
         // Pixels
         @if unit($height) == &#39;px&#39; {
-            $multiplier      : ceil(_to-rem($height, $root-font-size) / $root-line-height);
+            $fixed-multiplier: ceil(_to-rem($height, $root-font-size) / $root-line-height);
+
             // Add offset to height if box sizing is border-box
             $vr-height       : if($is-vr-offset and $vr-box-sizing == border-box, $height + $offset-total, $height);
-            $remainder       : &quot;(#{$root-line-height * $multiplier} - #{$vr-height})&quot;;
+            $remainder       : &quot;(#{$root-line-height * $fixed-multiplier} - #{$vr-height})&quot;;
             $vr-margin-top   : if($vr-margin-top, &quot;#{$vr-margin-top} + (#{$remainder} / 2)&quot;, &quot;#{$remainder} / 2&quot;);
             $vr-margin-bottom: if($vr-margin-bottom, &quot;#{$vr-margin-bottom} + (#{$remainder} / 2)&quot;, &quot;#{$remainder} / 2&quot;);
         }
@@ -395,7 +399,7 @@ textarea[rows=&quot;1&quot;],
         $prev-root-font-size  : $root-font-size;
         $prev-line-height     : $root-line-height;
         $prev-modular-scale   : $modular-scale;
-        $prev-fixed-multiplier: if($height and unit($height) == &#39;px&#39;, $multiplier, null);
+        $prev-fixed-multiplier: $fixed-multiplier;
 
         // Repeat for each breakpoint
         @each $breakpoint, $settings in _get-settings() {
