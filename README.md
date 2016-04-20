@@ -56,7 +56,7 @@ The default settings provide a sensible starting point for new projects:
 1. Import Vertical Rhythm Reset.
 
    ```scss
-         @import "path/to/vertical-rhythm-reset";
+   @import "path/to/vertical-rhythm-reset";
    ```
 
 2. Call the `vr-reset()` [mixin](#vr-reset) at the root to generate the CSS reset/normalization rules:
