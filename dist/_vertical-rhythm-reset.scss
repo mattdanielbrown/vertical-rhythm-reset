@@ -1,9 +1,5 @@
-// TODO
-// =============================================================================
-// TODO: Include note about Chrome dev tools triggering mobile-only media query
-// TODO: Create demo page on CodePen
-
 // Vertical Rhythm Reset
+// http://jhildenbiddle.github.io/vertical-rhythm-reset/
 // =============================================================================
 // SassDoc file-level annotations
 ////
@@ -760,6 +756,9 @@ $_vr-border-color: #808080;
     $vr-padding-top   : if(type-of($vr-padding-top) == 'number' and _strip-unit($vr-padding-top) == 0, _strip-unit($vr-padding-top) * 1px, $vr-padding-top);
     $vr-padding-bottom: if(type-of($vr-padding-bottom) == 'number' and _strip-unit($vr-padding-bottom) == 0, _strip-unit($vr-padding-bottom) * 1px, $vr-padding-bottom);
 
+    // Create accessible height multiplier variable for breakpoint check
+    $fixed-multiplier: null;
+
     // Checks
     $is-vr-margin : if($vr-margin-top or $vr-margin-bottom, true, false);
     $is-vr-padding: if($vr-padding-top or $vr-padding-bottom, true, false);
@@ -789,10 +788,11 @@ $_vr-border-color: #808080;
 
         // Pixels
         @if unit($height) == 'px' {
-            $multiplier      : ceil(_to-rem($height, $root-font-size) / $root-line-height);
+            $fixed-multiplier: ceil(_to-rem($height, $root-font-size) / $root-line-height);
+
             // Add offset to height if box sizing is border-box
             $vr-height       : if($is-vr-offset and $vr-box-sizing == border-box, $height + $offset-total, $height);
-            $remainder       : "(#{$root-line-height * $multiplier} - #{$vr-height})";
+            $remainder       : "(#{$root-line-height * $fixed-multiplier} - #{$vr-height})";
             $vr-margin-top   : if($vr-margin-top, "#{$vr-margin-top} + (#{$remainder} / 2)", "#{$remainder} / 2");
             $vr-margin-bottom: if($vr-margin-bottom, "#{$vr-margin-bottom} + (#{$remainder} / 2)", "#{$remainder} / 2");
         }
@@ -931,7 +931,7 @@ $_vr-border-color: #808080;
         $prev-root-font-size  : $root-font-size;
         $prev-line-height     : $root-line-height;
         $prev-modular-scale   : $modular-scale;
-        $prev-fixed-multiplier: if($height and unit($height) == 'px', $multiplier, null);
+        $prev-fixed-multiplier: $fixed-multiplier;
 
         // Repeat for each breakpoint
         @each $breakpoint, $settings in _get-settings() {
