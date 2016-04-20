@@ -582,6 +582,7 @@ Vertical Rhythm Reset is compatible with "evergreen" browsers such as Chrome, Ed
 
 - [Normalize.css](https://necolas.github.io/normalize.css) by Nicolas Gallagher and Jonathan Neal.
 - [Modular Scale](http://www.modularscale.com/) by Scott Vellum and Tim Brown.
+- [HTML5 Test Page](https://github.com/cbracco/html5-test-page) by Chris Bracco.
 - [*Groove to a Vertical Rhythm*](http://inlehmansterms.net/2014/06/09/groove-to-a-vertical-rhythm) by Jonathan Lehman.
 - [*Optimizing SVGs in data URIs*](http://codepen.io/tigt/post/optimizing-svgs-in-data-uris) by Taylor Hunt.
 
