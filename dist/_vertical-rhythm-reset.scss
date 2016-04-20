@@ -1035,7 +1035,7 @@ $_vr-border-color: #808080;
             $grid-size           : round(_strip-unit($line-height) * _strip-unit($font-size));
             $grid-line-color     : transparentize($grid-color, 0.5);
             $grid-highlight-color: transparentize($grid-color, 0.9);
-            $grid-text-color     : if(lightness($grid-color) > 50, #000, #fff);
+            $grid-text-color     : if(lightness($grid-color) > 52, #000, #fff);
 
             // Display detail as pseudo content
             @if $detail {
@@ -1193,6 +1193,9 @@ $_vr-border-color: #808080;
             padding-top: 0;
             padding-bottom: 0;
             font: inherit;
+
+            // Required for inline elements for alignment
+            vertical-align: bottom;
         }
 
         html {
@@ -1200,8 +1203,9 @@ $_vr-border-color: #808080;
             font-family: sans-serif;
 
             // Prevent font-size adjustments on orientation change
-            -ms-text-size-adjust: 100%;
             -webkit-text-size-adjust: 100%;
+               -moz-text-size-adjust: 100%;
+                -ms-text-size-adjust: 100%;
         }
 
         body {
@@ -1246,26 +1250,11 @@ $_vr-border-color: #808080;
             line-height: 0;
         }
 
-        // Vertical Align: Top
-        iframe,
-        select[multiple],
-        textarea {
-            vertical-align: top;
-        }
-
-        // Vertical Align: Bottom
-        audio,
-        button,
-        code,
-        img,
-        input:not([type="radio"]):not([type="checkbox"]),
-        kbd,
-        pre,
-        samp,
-        select:not([multiple]),
-        small,
-        video {
-            vertical-align: bottom;
+        // Margins
+        input[type="radio"],
+        input[type="checkbox"] {
+            // Attempt to center with base vertical-alignment (see * above)
+            margin-bottom: 0.325em;
         }
 
         // Misc
