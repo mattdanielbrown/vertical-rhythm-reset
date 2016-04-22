@@ -23,7 +23,13 @@ Simple implementation, flexible customization options, optimized CSS output, sma
 Download using [NPM](https://www.npmjs.com/):
 
 ```shell
-npm install vertical-rhythm-reset --save
+npm install vertical-rhythm-reset
+```
+
+Download using [Bower](http://bower.io/):
+
+```shell
+bower install vertical-rhythm-reset
 ```
 
 Clone this repository:
