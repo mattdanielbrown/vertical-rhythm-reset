@@ -37,7 +37,7 @@
     "sass",
     "scss"
   ],
-  "main": "index.js",
+  "main": "dist/_vertical-rhythm-reset.scss",
   "scripts": {
     "build": "npm run sass-build & npm run sassdoc-build",
     "deploy": "gh-pages -d site",
