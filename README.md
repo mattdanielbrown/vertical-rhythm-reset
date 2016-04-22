@@ -94,9 +94,7 @@ The default settings provide a sensible starting point for new projects:
 
 ## Customization
 
-There are many configuration options available that allow you to customize the Vertical Rhythm Reset as you see fit. The sections below provide a quick overview of how to configure settings.
-
-For complete details on variable and mixin settings, please review the [SassDoc documentation](#).
+There are many configuration options available that allow you to customize the Vertical Rhythm Reset as you see fit. The sections below provide a quick overview of how to configure settings. For complete details on variable and mixin settings, please review the [SassDoc documentation](http://jhildenbiddle.github.io/vertical-rhythm-reset/sassdoc/).
 
 ### Box Sizing
 
@@ -194,7 +192,7 @@ The `$vr-breakpoints` global variable is a map that contains breakpoint settings
 **Configuration:**
 
 - Copy one of the example maps below as your starting point
-- Modify the map keys and values as needed (see the [SassDoc documentation](#) for details)
+- Modify the map keys and values as needed (see the [SassDoc documentation](http://jhildenbiddle.github.io/vertical-rhythm-reset/sassdoc/) for details)
   - The top-level key is the `min-width` media query value
   - The nested properties and values specify the settings to use for a given breakpoint
   - Only settings that change between breakpoints need to be specified
@@ -244,7 +242,7 @@ The `$vr-helpers` global variable is a map that contains settings used to genera
 **Configuration**
 
 - Copy one of the maps below as your starting point
-- Modify the map keys and values as needed (see the [SassDoc documentation](#) for details)
+- Modify the map keys and values as needed (see the [SassDoc documentation](http://jhildenbiddle.github.io/vertical-rhythm-reset/sassdoc/) for details)
   - The top-level key is the property which CSS classes will be generated for
   - `count` is the number of variations to generate
   - `prefix` is the portion of the generated class name that will preceed the numeric value
@@ -397,7 +395,7 @@ Generates the CSS reset/normalization, vertical rhythm grid and CSS helpers rule
 
 This mixin is typically called at the root of your SCSS file without any arguments specified. This allows the mixin to use the values specified with `$vr-font-size`, `$vr-line-height`, `$vr-modular-scale`,`$vr-grid-color`, `$vr-breakpoints` and `$vr-helpers` variables. As a convenience, this mixin allows setting these global variables by passing the desired values as arguments.
 
-See [SassDoc documentation](#) for additional details.
+See [SassDoc documentation](http://jhildenbiddle.github.io/vertical-rhythm-reset/sassdoc/) for additional details.
 
 **Arguments (Optional)**
 
@@ -448,7 +446,7 @@ $vr-helpers      : (...);
 
 Renders the vertical rhythm grid as a background image and applies a highlight color as a semi-transparent background to all child elements.
 
-See [SassDoc documentation](#) for additional details.
+See [SassDoc documentation](http://jhildenbiddle.github.io/vertical-rhythm-reset/sassdoc/) for additional details.
 
 **Arguments**
 
@@ -475,7 +473,7 @@ body {
 
 Generates CSS rules for vertical rhythm grid alignment and modular scale typography. Use this mixin to specify CSS properties and values to ensure elements align to the vertical rhythm grid.
 
-See [SassDoc documentation](#) for additional details.
+See [SassDoc documentation](http://jhildenbiddle.github.io/vertical-rhythm-reset/sassdoc/) for additional details.
 
 **Arguments**
 
