@@ -520,6 +520,7 @@ div {
                         + &quot; font-size    : #{$font-size}\A&quot;
                         + &quot; line-height  : #{round($font-size * _strip-unit($line-height))}\A&quot;
                         + &quot; modular-scale: #{$modular-scale}&quot; !important;
+                    display: table !important; // Fix for flexbox
                     position: fixed !important;
                     z-index: 2147483647 !important;
                     bottom: 1vh !important;
@@ -965,6 +966,10 @@ body {
                 }
 
                 // Margins
+                h1 {
+                    @include vr($margin-top: 0, $margin-bottom: 1, $is-breakpoint: true, $settings: $settings);
+                }
+
                 blockquote,
                 dl,
                 form,
@@ -982,15 +987,15 @@ body {
                 }
 
                 fieldset {
-                    @include vr($margin-top: 1, $margin-bottom: 1, $offset-bottom: 1px, $is-breakpoint: true, $settings: $settings);
-                    width: calc(100% - 2px);
+                    @include vr($margin: 1 0, $offset-bottom: 1px, $is-breakpoint: true, $settings: $settings);
+                    width: 100%;
                 }
             }
 
+            // Font Size
             @if $modular-scale and ($is-new-line-height or $is-new-modular-scale) {
-                // Text
                 h1 {
-                    @include vr($font-size: 4, $margin-bottom: 1, $is-breakpoint: true, $settings: $settings);
+                    @include vr($font-size: 4, $is-breakpoint: true, $settings: $settings);
                 }
 
                 h2 {

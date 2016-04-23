@@ -1047,6 +1047,7 @@ $_vr-border-color: #808080;
                         + " font-size    : #{$font-size}\A"
                         + " line-height  : #{round($font-size * _strip-unit($line-height))}\A"
                         + " modular-scale: #{$modular-scale}" !important;
+                    display: table !important; // Fix for flexbox
                     position: fixed !important;
                     z-index: 2147483647 !important;
                     bottom: 1vh !important;
@@ -1546,6 +1547,10 @@ $_vr-border-color: #808080;
                 }
 
                 // Margins
+                h1 {
+                    @include vr($margin-top: 0, $margin-bottom: 1, $is-breakpoint: true, $settings: $settings);
+                }
+
                 blockquote,
                 dl,
                 form,
@@ -1563,15 +1568,15 @@ $_vr-border-color: #808080;
                 }
 
                 fieldset {
-                    @include vr($margin-top: 1, $margin-bottom: 1, $offset-bottom: 1px, $is-breakpoint: true, $settings: $settings);
-                    width: calc(100% - 2px);
+                    @include vr($margin: 1 0, $offset-bottom: 1px, $is-breakpoint: true, $settings: $settings);
+                    width: 100%;
                 }
             }
 
+            // Font Size
             @if $modular-scale and ($is-new-line-height or $is-new-modular-scale) {
-                // Text
                 h1 {
-                    @include vr($font-size: 4, $margin-bottom: 1, $is-breakpoint: true, $settings: $settings);
+                    @include vr($font-size: 4, $is-breakpoint: true, $settings: $settings);
                 }
 
                 h2 {
