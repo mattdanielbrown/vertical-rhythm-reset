@@ -285,6 +285,11 @@ video {
   height: 12.00008rem;
 }
 
+h1 {
+  margin-top: 0px;
+  margin-bottom: 1.50001rem;
+}
+
 blockquote,
 dl,
 form,
@@ -304,15 +309,13 @@ ul {
 
 fieldset {
   display: inline-block;
-  margin-top: 1.50001rem;
-  margin-bottom: calc((1.50001rem) - 1px);
-  width: calc(100% - 2px);
+  margin: 1.50001rem 0 calc((1.50001rem) - 1px);
+  width: 100%;
 }
 
 h1 {
   font-size: 2.0736rem;
   line-height: 3.00001rem;
-  margin-bottom: 1.50001rem;
 }
 
 h2 {
@@ -687,6 +690,7 @@ body.show-grid {
 body.show-grid:before {
   /* Vertical Rhythm Reset: Grid Detail */
   content: "Vertical Rhythm Reset\a --------------------------\a breakpoint   : root\a font-size    : 14px\a line-height  : 21px\a modular-scale: minor-third" !important;
+  display: table !important;
   position: fixed !important;
   z-index: 2147483647 !important;
   bottom: 1vh !important;
@@ -715,6 +719,7 @@ body.show-grid *:not(hr) {
   body.show-grid:before {
     /* Vertical Rhythm Reset: Grid Detail */
     content: "Vertical Rhythm Reset\a --------------------------\a breakpoint   : 60em\a font-size    : 16px\a line-height  : 24px\a modular-scale: minor-third" !important;
+    display: table !important;
     position: fixed !important;
     z-index: 2147483647 !important;
     bottom: 1vh !important;
@@ -739,6 +744,7 @@ body.show-grid *:not(hr) {
   body.show-grid:before {
     /* Vertical Rhythm Reset: Grid Detail */
     content: "Vertical Rhythm Reset\a --------------------------\a breakpoint   : 90em\a font-size    : 18px\a line-height  : 27px\a modular-scale: minor-third" !important;
+    display: table !important;
     position: fixed !important;
     z-index: 2147483647 !important;
     bottom: 1vh !important;
