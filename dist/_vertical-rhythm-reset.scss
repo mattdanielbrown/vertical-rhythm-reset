@@ -1041,12 +1041,12 @@ $_vr-border-color: #808080;
             @if $detail {
                 &:before {
                     /* Vertical Rhythm Reset: Grid Detail */
-                    content: "Vertical Rhythm Reset\A"
-                        + " --------------------------\A"
-                        + " breakpoint   : #{$breakpoint}\A"
-                        + " font-size    : #{$font-size}\A"
-                        + " line-height  : #{round($font-size * _strip-unit($line-height))}\A"
-                        + " modular-scale: #{$modular-scale}" !important;
+                    content: "Vertical Rhythm Reset\A\
+  --------------------------\A\
+  breakpoint   : #{$breakpoint}\A\
+  font-size    : #{$font-size}\A\
+  line-height  : #{round($font-size * _strip-unit($line-height))}\A\
+  modular-scale: #{$modular-scale}" !important;
                     display: table !important; // Fix for flexbox
                     position: fixed !important;
                     z-index: 2147483647 !important;
@@ -1065,15 +1065,15 @@ $_vr-border-color: #808080;
 
             // Grid lines
             @if $lines {
-                $grid-svg: "data:image/svg+xml;charset=utf8,"
-                    + "%3Csvg width='#{$grid-size}px' height='#{$grid-size}px' viewBox='0 0 #{$grid-size} #{$grid-size}' xmlns='http://www.w3.org/2000/svg'%3E"
-                    + "%3Cdefs%3E"
-                    + "%3Cpattern id='grid' height='#{$grid-size}' width='1000' patternUnits='userSpaceOnUse'%3E"
-                    + "%3Cpath d='M #{$grid-size} 0 L -1 0 -1 #{$grid-size}' fill='none' stroke='#{$grid-line-color}' stroke-width='1' /%3E"
-                    + "%3C/pattern%3E"
-                    + "%3C/defs%3E"
-                    + "%3Crect width='#{$grid-size}px' height='#{$grid-size}px' fill='url(%23grid)' /%3E"
-                    + "%3C/svg%3E";
+                $grid-svg: "data:image/svg+xml;charset=utf8,\
+%3Csvg width='#{$grid-size}px' height='#{$grid-size}px' viewBox='0 0 #{$grid-size} #{$grid-size}' xmlns='http://www.w3.org/2000/svg'%3E\
+%3Cdefs%3E\
+%3Cpattern id='grid' height='#{$grid-size}' width='1000' patternUnits='userSpaceOnUse'%3E\
+%3Cpath d='M #{$grid-size} 0 L -1 0 -1 #{$grid-size}' fill='none' stroke='#{$grid-line-color}' stroke-width='1' /%3E\
+%3C/pattern%3E\
+%3C/defs%3E\
+%3Crect width='#{$grid-size}px' height='#{$grid-size}px' fill='url(%23grid)' /%3E\
+%3C/svg%3E";
 
                 /* Vertical Rhythm Reset: Grid Lines */
                 background-image: url($grid-svg) !important;
