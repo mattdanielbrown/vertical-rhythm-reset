@@ -9,6 +9,7 @@ Simple implementation, flexible customization options, optimized CSS output, sma
 ------
 
 - [Installation](#installation)
+- [Requirements](#requirements)
 - [Quick Start](#quick-start)
 - [Customization](#customization)
 - [Mixins](#mixins)
@@ -17,6 +18,11 @@ Simple implementation, flexible customization options, optimized CSS output, sma
 - [License](#license)
 
 ------
+
+## Requirements
+
+* LibSass 3.2+
+* Ruby Sass 3.4+
 
 ## Installation
 
