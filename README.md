@@ -8,8 +8,8 @@ Simple implementation, flexible customization options, optimized CSS output, sma
 
 ------
 
-- [Installation](#installation)
 - [Requirements](#requirements)
+- [Installation](#installation)
 - [Quick Start](#quick-start)
 - [Customization](#customization)
 - [Mixins](#mixins)
