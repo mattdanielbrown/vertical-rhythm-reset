@@ -10,3 +10,8 @@
 ## 1.0.3 - 2016.09.01
 ### Fixed
 - LibSass v3.3.6 compatibility
+
+## 1.1.0 - 2017.03.14
+### Added
+- Width support for vr() mixin
+- Line-height and width helper classes via $vr-helpers map

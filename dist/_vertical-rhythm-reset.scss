@@ -34,27 +34,26 @@ $vr-box-sizing: border-box !default;
 /// @type Map
 ///
 /// @prop {Length} [width] - Breakpoint min-width
-///
 ///   Media queries will be generated for each breakpoint width provided.
-/// @prop {Number|Length(px|rem|%)} [width].font-size - Root element font-size
 ///
+/// @prop {Number|Length(px|rem|%)} [width].font-size - Root element font-size
 ///   A `:root` CSS rule will be generated for each breakpoint that sets the
 ///   root element font size to the specified value.
-/// @prop {Number|Length(px|rem|%)} [width].line-height - Line-height
 ///
+/// @prop {Number|Length(px|rem|%)} [width].line-height - Line-height
 ///   This value is used to calculate the vertical rhythm row height for each
 ///   breakpoint by multiplying the font-size by the line height and converting
 ///   the result to a `rem`-based value. A `*` selector CSS rule is then
 ///   generated for each breakpoint that sets the default line height for all
 ///   elements to this value (the equivalent of one vertical rhythm row).
-/// @prop {Number|String} [width].modular-scale - Modular type scale
 ///
+/// @prop {Number|String} [width].modular-scale - Modular type scale
 ///   This value determines the modular type scale used to calculate unitless
 ///   font-size values passed to the `vr()` mixin and the CSS values generated
 ///   by the `$vr-helper` map. See the `$vr-modular-scale-map` variable for a
 ///   complete list of modular scale names.
-/// @prop {Color} [width].grid-color - Vertical rhythm grid color
 ///
+/// @prop {Color} [width].grid-color - Vertical rhythm grid color
 ///   This value is used as the base color for the vertical rhythm grid lines,
 ///   element heightlights and detail panel presentation.
 ///
@@ -121,12 +120,22 @@ $vr-breakpoints: (
 ///     line-height: 1.5rem;
 ///   }
 ///
+///   /* Line Height */
+///   .vr-line-height-1 {
+///     line-height: 1.5rem;
+///   }
+///
 ///   /* Height */
 ///   [height="1"],
 ///   select[multiple][size="1"],
 ///   textarea[rows="1"],
 ///   .vr-height-1 {
 ///     height: 1.5rem;
+///   }
+///
+///   /* Width */
+///   .vr-width-1 {
+///     width: 1.5rem;
 ///   }
 ///
 ///   /* Margin */
@@ -172,7 +181,9 @@ $vr-breakpoints: (
 ///
 /// @example markup HTML
 ///   <div class="vr-font-size-1">...</div>
+///   <div class="vr-line-height-1">...</div>
 ///   <div class="vr-height-1">...</div>
+///   <div class="vr-width-1">...</div>
 ///   <div class="vr-margin-1">...</div>
 ///   <div class="vr-margin-top-1">...</div>
 ///   <div class="vr-margin-bottom-1">...</div>
@@ -189,9 +200,17 @@ $vr-helpers: (
         count : 5,
         prefix: "vr-font-size-"
     ),
+    line-height: (
+        count : 10,
+        prefix: "vr-line-height-"
+    ),
     height: (
         count : 10,
         prefix: "vr-height-"
+    ),
+    width: (
+        count : 10,
+        prefix: "vr-width-"
     ),
     margin: (
         count : 5,
@@ -514,19 +533,19 @@ $_vr-border-color: #808080;
 /// @param {Length(px|%)|Number} $font-size [null]
 ///   Accepts both unitless and unit values:
 ///   - Unitless values will be converted to `rem`-based modular type scale
-///   equivalent.
+///     equivalent.
 ///     - `font-size:0` = 1rem
 ///     - `font-size:1` = 1rem * modular scale
 ///     - `font-size:2` = 1rem * modular scale<sup>2</sup>
 ///     - `font-size:3` = 1rem * modular scale<sup>3</sup>
 ///     - ...
 ///   - Unit values (`px`, `rem` or `%`) will be converted to `rem`-based
-///   values.
+///     values.
 ///     - `font-size:16px  ` = 1.14285rem *(Example when root font-size = 14px)*
 ///     - `font-size:0.8rem` = 0.8rem
 ///     - `font-size:80%   ` = 0.8rem
 ///   - The font-size will be used to determine the line-height required for
-///   vertical rhythm grid alignment.
+///     vertical rhythm grid alignment.
 ///
 /// @param {Number} $line-height [null]
 ///   Sets the line-height to a multiple of vertical rhythm grid rows.
@@ -534,7 +553,7 @@ $_vr-border-color: #808080;
 /// @param {Length(px)|Number} $height [null]
 ///   Accepts both unitless and `px`-based unit values:
 ///   - Unitless values will be converted to `rem`-based height equivalent of
-///   vertical rhythm grid rows.
+///     vertical rhythm grid rows.
 ///     - `height:1` = vertical rhythm grid rows * 1
 ///     - `height:2` = vertical rhythm grid rows * 2
 ///     - `height:3` = vertical rhythm grid rows * 3
@@ -545,6 +564,10 @@ $_vr-border-color: #808080;
 ///     - `height:100px` = 100px height with top/bottom margins
 ///     - `height:150px` = 150px height with top/bottom margins
 ///     - `height:200px` = 200px height with top/bottom margins
+///
+/// @param {Number} $width [null]
+///   Sets the width to a multiple of vertical rhythm grid row height.
+///
 /// @param {List|Number} $margin [null]
 ///   Shorthand margin setting. Explicit top|bottom|right|left settings will
 ///   override shorthand values.
@@ -552,26 +575,31 @@ $_vr-border-color: #808080;
 ///   - `margin:1 2    ` = top|bottom: 1, right|left: 2
 ///   - `margin:1 2 3  ` = top: 1, right|left: 2, bottom: 3
 ///   - `margin:1 2 3 4` = top: 1, right: 2, bottom: 3, left: 4
+///
 /// @param {Length|Number|null} $margin-top [null]
 ///   Accepts both unitless and unit values:
 ///   - Unitless values are converted to the equivalent number of vertical
 ///     rhythm grid rows
 ///   - Unit-based values are applied unchanged
+///
 /// @param {Length|Number|null} $margin-bottom [null]
 ///   Accepts both unitless and unit values:
 ///   - Unitless values are converted to the equivalent number of vertical
 ///     rhythm grid rows
 ///   - Unit-based values are applied unchanged
+///
 /// @param {Length|Number|null} $margin-right [null]
 ///   Accepts both unitless and unit values:
 ///   - Unitless values are converted to the equivalent number of vertical
 ///     rhythm grid rows
 ///   - Unit-based values are applied unchanged
+///
 /// @param {Length|Number|null} $margin-left [null]
 ///   Accepts both unitless and unit values:
 ///   - Unitless values are converted to the equivalent number of vertical
 ///     rhythm grid rows
 ///   - Unit-based values are applied unchanged
+///
 /// @param {List|Number} $padding [null]
 ///   Shorthand padding setting. Explicit top|bottom|right|left settings will
 ///   override shorthand values.
@@ -579,31 +607,37 @@ $_vr-border-color: #808080;
 ///   - `padding:1 2    ` = top|bottom: 1, right|left: 2
 ///   - `padding:1 2 3  ` = top: 1, right|left: 2, bottom: 3
 ///   - `padding:1 2 3 4` = top: 1, right: 2, bottom: 3, left: 4
+///
 /// @param {Length|Number|null} $padding-top [null]
 ///   Accepts both unitless and unit values:
 ///   - Unitless values are converted to the equivalent number of vertical
 ///     rhythm grid rows
 ///   - Unit-based values are applied unchanged
+///
 /// @param {Length|Number|null} $padding-bottom [null]
 ///   Accepts both unitless and unit values:
 ///   - Unitless values are converted to the equivalent number of vertical
 ///     rhythm grid rows
 ///   - Unit-based values are applied unchanged
+///
 /// @param {Length|Number|null} $padding-right [null]
 ///   Accepts both unitless and unit values:
 ///   - Unitless values are converted to the equivalent number of vertical
 ///     rhythm grid rows
 ///   - Unit-based values are applied unchanged
+///
 /// @param {Length|Number|null} $padding-left [null]
 ///   Accepts both unitless and unit values:
 ///   - Unitless values are converted to the equivalent number of vertical
 ///     rhythm grid rows
 ///   - Unit-based values are applied unchanged
+///
 /// @param {List|Number} $offset [null]
 ///   Shorthand offset setting. Explicit top|bottom settings will override
 ///   shorthand values.
 ///   - `offset:1  ` = offset-top:1, offset-bottom:1
 ///   - `offset:2 3` = offset-top:2, offset-bottom:3
+///
 /// @param {Length(px)|Number} $offset-top [null]
 ///   Accepts both unitless and `px`-based unit values.
 ///
@@ -620,7 +654,7 @@ $_vr-border-color: #808080;
 ///   vertical rhythm grid alignment.
 ///
 /// @example scss SCSS
-///   // Example of setting all vertical rhythm properties
+///   // Example of setting vertical rhythm properties
 ///   div {
 ///     @include vr(
 ///       $font-size     : 1,
@@ -652,6 +686,7 @@ $_vr-border-color: #808080;
     $font-size     : null,
     $line-height   : null,
     $height        : null,
+    $width         : null,
     $margin        : null,
     $margin-top    : null,
     $margin-bottom : null,
@@ -778,7 +813,7 @@ $_vr-border-color: #808080;
     // Line Height
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     @if $line-height {
-        line-height: if(type-of($line-height) == 'number' unitless($line-height), $line-height * $root-line-height, $line-height);
+        line-height: if(type-of($line-height) == 'number' and unitless($line-height), $line-height * $root-line-height, $line-height);
     }
 
     // Height
@@ -817,6 +852,12 @@ $_vr-border-color: #808080;
         @if unit($height) != 'px' or not $is-breakpoint {
             height: if(type-of($vr-height) == 'string', calc(#{$vr-height}), $vr-height);
         }
+    }
+
+    // Width
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    @if $width {
+        width: if(type-of($width) == 'number' and unitless($width), $width * $root-line-height, $width);
     }
 
     // Margins & Padding
@@ -1618,6 +1659,15 @@ $_vr-border-color: #808080;
                         }
 
                         @if $is-new-line-height {
+                            // Line Height
+                            @if $property-key == 'line-height' {
+                                @for $i from 1 through $count {
+                                    .#{$prefix}#{$i}#{$suffix} {
+                                        @include vr($line-height: $i, $is-breakpoint: true, $settings: $settings);
+                                    }
+                                }
+                            }
+
                             // Height
                             @if $property-key == 'height' {
                                 @for $i from 1 through $count {
@@ -1626,6 +1676,15 @@ $_vr-border-color: #808080;
                                     textarea[rows="#{$i}"],
                                     .#{$prefix}#{$i}#{$suffix} {
                                         @include vr($height: $i, $is-breakpoint: true, $settings: $settings);
+                                    }
+                                }
+                            }
+
+                            // Width
+                            @if $property-key == 'width' {
+                                @for $i from 1 through $count {
+                                    .#{$prefix}#{$i}#{$suffix} {
+                                        @include vr($width: $i, $is-breakpoint: true, $settings: $settings);
                                     }
                                 }
                             }

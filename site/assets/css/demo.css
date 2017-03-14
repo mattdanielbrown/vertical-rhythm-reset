@@ -361,6 +361,46 @@ h6 {
   line-height: 3.00001rem;
 }
 
+.vr-line-height-1 {
+  line-height: 1.50001rem;
+}
+
+.vr-line-height-2 {
+  line-height: 3.00002rem;
+}
+
+.vr-line-height-3 {
+  line-height: 4.50003rem;
+}
+
+.vr-line-height-4 {
+  line-height: 6.00004rem;
+}
+
+.vr-line-height-5 {
+  line-height: 7.50005rem;
+}
+
+.vr-line-height-6 {
+  line-height: 9.00006rem;
+}
+
+.vr-line-height-7 {
+  line-height: 10.50007rem;
+}
+
+.vr-line-height-8 {
+  line-height: 12.00008rem;
+}
+
+.vr-line-height-9 {
+  line-height: 13.50009rem;
+}
+
+.vr-line-height-10 {
+  line-height: 15.0001rem;
+}
+
 [height="1"],
 select[multiple][size="1"],
 textarea[rows="1"],
@@ -429,6 +469,46 @@ select[multiple][size="10"],
 textarea[rows="10"],
 .vr-height-10 {
   height: 15.0001rem;
+}
+
+.vr-width-1 {
+  width: 1.50001rem;
+}
+
+.vr-width-2 {
+  width: 3.00002rem;
+}
+
+.vr-width-3 {
+  width: 4.50003rem;
+}
+
+.vr-width-4 {
+  width: 6.00004rem;
+}
+
+.vr-width-5 {
+  width: 7.50005rem;
+}
+
+.vr-width-6 {
+  width: 9.00006rem;
+}
+
+.vr-width-7 {
+  width: 10.50007rem;
+}
+
+.vr-width-8 {
+  width: 12.00008rem;
+}
+
+.vr-width-9 {
+  width: 13.50009rem;
+}
+
+.vr-width-10 {
+  width: 15.0001rem;
 }
 
 .vr-margin-1 {
@@ -675,7 +755,7 @@ body {
 
 body:before {
   /* Vertical Rhythm Reset: Grid Detail */
-  content: "Vertical Rhythm Reset\a --------------------------\a breakpoint   : root\a font-size    : 14px\a line-height  : 21px\a modular-scale: minor-third" !important;
+  content: "Vertical Rhythm Reset\a  --------------------------\a  breakpoint   : root\a  font-size    : 14px\a  line-height  : 21px\a  modular-scale: minor-third" !important;
   display: table !important;
   position: fixed !important;
   z-index: 2147483647 !important;
@@ -704,7 +784,7 @@ body *:not(hr) {
   }
   body:before {
     /* Vertical Rhythm Reset: Grid Detail */
-    content: "Vertical Rhythm Reset\a --------------------------\a breakpoint   : 60em\a font-size    : 16px\a line-height  : 24px\a modular-scale: minor-third" !important;
+    content: "Vertical Rhythm Reset\a  --------------------------\a  breakpoint   : 60em\a  font-size    : 16px\a  line-height  : 24px\a  modular-scale: minor-third" !important;
     display: table !important;
     position: fixed !important;
     z-index: 2147483647 !important;
@@ -729,7 +809,7 @@ body *:not(hr) {
   }
   body:before {
     /* Vertical Rhythm Reset: Grid Detail */
-    content: "Vertical Rhythm Reset\a --------------------------\a breakpoint   : 90em\a font-size    : 18px\a line-height  : 27px\a modular-scale: minor-third" !important;
+    content: "Vertical Rhythm Reset\a  --------------------------\a  breakpoint   : 90em\a  font-size    : 18px\a  line-height  : 27px\a  modular-scale: minor-third" !important;
     display: table !important;
     position: fixed !important;
     z-index: 2147483647 !important;

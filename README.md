@@ -270,9 +270,17 @@ $vr-helpers: (
         count : 5,
         prefix: "vr-font-size-"
     ),
+    line-height: (
+        count : 10,
+        prefix: "vr-line-height-"
+    ),
     height: (
         count : 10,
         prefix: "vr-height-"
+    ),
+    width: (
+        count : 10,
+        prefix: "vr-width-"
     ),
     margin: (
         count : 5,
@@ -327,12 +335,22 @@ $vr-helpers: (
   line-height: 1.5rem;
 }
 
+/* Line Height */
+.vr-line-height-1 {
+  line-height: 1.5rem;
+}
+
 /* Height (1 through "count") */
 [height="1"],
 select[multiple][size="1"],
 textarea[rows="1"],
 .vr-height-1 {
   height: 1.5rem;
+}
+
+/* Width */
+.vr-width-1 {
+  width: 1.5rem;
 }
 
 /* Margin (1 through "count") */
@@ -381,7 +399,9 @@ textarea[rows="1"],
 
 ```html
 <div class="vr-font-size-1">...</div>
+<div class="vr-line-height-1">...</div>
 <div class="vr-height-1">...</div>
+<div class="vr-width-1">...</div>
 <div class="vr-margin-1">...</div>
 <div class="vr-margin-top-1">...</div>
 <div class="vr-margin-bottom-1">...</div>
@@ -493,6 +513,7 @@ See [SassDoc documentation](http://jhildenbiddle.github.io/vertical-rhythm-reset
 | `$font‑size`      | Modular scale font size (number) or custom font size (px\|rem\|%) | Length(px\|rem\|%), Number | `null`  |
 | `$line-height`    | Line height                              | Number                     | `null`  |
 | `$height`         | Vertical rhythm row height (number) or fixed height (px) | Length(px), Number         | `null`  |
+| `$width`          | Width                                    | Number                     | `null`  |
 | `$margin`         | Margin ([shorthand](https://developer.mozilla.org/en-US/docs/Web/CSS/margin)) | Length\|List\|Number       | `null`  |
 | `$margin‑top`     | Margin top                               | Length\|Number             | `null`  |
 | `$margin‑bottom`  | Margin bottom                            | Length\|Number             | `null`  |
@@ -518,6 +539,15 @@ See [SassDoc documentation](http://jhildenbiddle.github.io/vertical-rhythm-reset
 // Set the height to 3 vertical rhythm grid rows
 .height {
   @include vr($height: 3);
+}
+
+// Set the height and width to 5 vertical rhythm grid rows and center the text
+.square-centered-text {
+  @include vr(
+    $height: 5,
+    $width: 5,
+    $line-heigh: 5
+  );
 }
 
 // Set the top and bottom margin to 1 vertical rhythm grid row
