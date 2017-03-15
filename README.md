@@ -100,7 +100,7 @@ The default settings provide a sensible starting point for new projects:
 
 ## Customization
 
-There are many configuration options available that allow you to customize the Vertical Rhythm Reset as you see fit. The sections below provide a quick overview of how to configure settings. For complete details on variable and mixin settings, please review the [SassDoc documentation](http://jhildenbiddle.github.io/vertical-rhythm-reset/sassdoc/).
+There are many configuration options available that allow you to customize the Vertical Rhythm Reset as you see fit. The sections below provide an overview of how to configure settings. For complete details on variable and mixin settings, please review the [SassDoc documentation](http://jhildenbiddle.github.io/vertical-rhythm-reset/sassdoc/).
 
 ### Box Sizing
 
@@ -130,7 +130,7 @@ html {
 
 A vertical rhythm grid provides symmetry to your project by aligning elements to an invisible-yet-recognizable visual layout pattern.
 
-The height of a grid row is calculated by multiplying the font-size by the line-height. The result is then converted a `rem`-based value and applied to all elements using a `*` selector rule.
+The height of a grid row is calculated by multiplying the font-size by the line-height. The result is then converted to a `rem`-based value and applied to all elements using a `*` selector rule.
 
 To configure the base vertical rhythm grid, set the font-size and line-height using the `$vr-font-size` and `$vr-line-height` global variables before calling the `vr-reset()` mixin.
 
@@ -207,9 +207,8 @@ The `$vr-breakpoints` global variable is a map that contains breakpoint settings
 
 **Tips**
 
-1. The font-size and line-height values can have a significant impact on the generated CSS output. To keep the CSS output as lightweight as possible, maintain a consistent line-height across breakpoints that produces whole number when multiplied by the font-size. This will allow the `rem`-based values generated for the root breakpoint to work across all breakpoints which removes the need to generate recalculated values for every media query.
-2. For a stronger breakpoint change indicator, consider specifying unique `grid-color` for each breakpoint.
-3. Use the `vr-grid()` [mixin](#vr-grid) to visualize the vertical rhythm grid settings.
+1. Font-size and line-height values can have a significant impact on the generated CSS output. To keep the CSS output as lightweight as possible, maintain a consistent line-height across breakpoints and use font-size values that equal whole numbers when multiplied by the line-height. This will allow the `rem`-based values generated for the root breakpoint to work across all breakpoints which removes the need to generate recalculated values for every media query.
+2. Use the `vr-grid()` [mixin](#vr-grid) to visualize the vertical rhythm grid settings. For a stronger breakpoint change indicator, consider specifying unique `grid-color` for each breakpoint.
 
 **SCSS**
 
@@ -335,7 +334,7 @@ $vr-helpers: (
   line-height: 1.5rem;
 }
 
-/* Line Height */
+/* Line Height (1 through "count") */
 .vr-line-height-1 {
   line-height: 1.5rem;
 }
@@ -348,7 +347,7 @@ textarea[rows="1"],
   height: 1.5rem;
 }
 
-/* Width */
+/* Width (1 through "count") */
 .vr-width-1 {
   width: 1.5rem;
 }
@@ -546,8 +545,10 @@ See [SassDoc documentation](http://jhildenbiddle.github.io/vertical-rhythm-reset
   @include vr(
     $height: 5,
     $width: 5,
-    $line-heigh: 5
+    $line-height: 5
   );
+  
+  text-align: centered;
 }
 
 // Set the top and bottom margin to 1 vertical rhythm grid row
@@ -624,7 +625,7 @@ Vertical Rhythm Reset is compatible with "evergreen" browsers such as Chrome, Ed
 
 **The MIT License (MIT)**
 
-Copyright (c) 2016 John Hildenbiddle ([@jhildenbiddle](https://twitter.com/jhildenbiddle))
+Copyright (c) 2017 John Hildenbiddle ([@jhildenbiddle](https://twitter.com/jhildenbiddle))
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

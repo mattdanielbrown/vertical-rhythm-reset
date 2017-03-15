@@ -1084,11 +1084,11 @@ $_vr-border-color: #808080;
                 &:before {
                     /* Vertical Rhythm Reset: Grid Detail */
                     content: "Vertical Rhythm Reset\A\
-  --------------------------\A\
-  breakpoint   : #{$breakpoint}\A\
-  font-size    : #{$font-size}\A\
-  line-height  : #{round($font-size * _strip-unit($line-height))}\A\
-  modular-scale: #{$modular-scale}" !important;
+ --------------------------\A\
+ breakpoint   : #{$breakpoint}\A\
+ font-size    : #{$font-size}\A\
+ line-height  : #{round($font-size * _strip-unit($line-height))}\A\
+ modular-scale: #{$modular-scale}" !important;
                     display: table !important; // Fix for flexbox
                     position: fixed !important;
                     z-index: 2147483647 !important;
