@@ -28,11 +28,10 @@
   "main": "dist/_vertical-rhythm-reset.scss",
   "scripts": {
     "build": "npm run build:sass & npm run build:sassdoc",
-    "clean": "rimraf site/assets/css/* site/sassdoc/*",
-    "deploy": "gh-pages -d site",
-    "build:sass": "node-sass --output-style expanded --recursive --include-path dist site/assets/sass --output site/assets/css",
-    "build:sassdoc": "sassdoc ./dist -d ./site/sassdoc",
-    "serve": "browser-sync start --server 'site' --files 'site/*.html' 'site/**/*.css' --no-open --no-notify",
+    "clean": "rimraf docs/assets/css/* docs/sassdoc/*",
+    "build:sass": "node-sass --output-style expanded --recursive --include-path dist docs/assets/sass --output docs/assets/css",
+    "build:sassdoc": "sassdoc ./dist -d ./docs/sassdoc",
+    "serve": "browser-sync start --server 'docs' --files 'docs/*.html' 'docs/**/*.css' --no-open --no-notify",
     "start": "npm run serve & npm run watch",
     "watch": "npm run watch:sass & npm run watch:sassdoc",
     "watch:sass": "npm run build:sass && npm run build:sass -- -w",
@@ -40,7 +39,6 @@
   },
   "devDependencies": {
     "browser-sync": "^2.24.4",
-    "gh-pages": "^0.11.0",
     "node-sass": "^4.9.0",
     "nodemon": "^1.17.4",
     "rimraf": "^2.6.2",

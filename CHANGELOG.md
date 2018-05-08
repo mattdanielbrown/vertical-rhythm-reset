@@ -5,6 +5,8 @@
 *2018.05.08*
 
 - Updated README
+- Updated website and moved to /docs directory
+- Update npm dependencies and scripts
 
 ## 1.1.0
 
