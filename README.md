@@ -1,5 +1,11 @@
 # Vertical Rhythm Reset
-The perfect starting point for CSS normalization, responsive vertical rhythm grids and modular scale typography. 
+
+[![NPM](https://img.shields.io/npm/v/vertical-rhythm-reset.svg?style=flat-square)](https://www.npmjs.com/package/vertical-rhythm-reset)
+[![Codacy grade](https://img.shields.io/codacy/grade/594f7908b74a4e89bc3cb3265f966c52.svg?style=flat-square)](https://www.codacy.com/app/jhildenbiddle/vertical-rhythm-reset?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jhildenbiddle/vertical-rhythm-reset&amp;utm_campaign=Badge_Grade)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://github.com/jhildenbiddle/vertical-rhythm-reset/blob/master/LICENSE)
+[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?url=https%3A%2F%2Fgithub.com%2Fjhildenbiddle%2Fvertical-rhythm-reset&hashtags=css,sass,scss,frontend)
+
+The perfect starting point for CSS normalization, responsive vertical rhythm grids and modular scale typography.
 
 Simple implementation, flexible customization options, optimized CSS output, smart mixins for effortless grid alignment and a range of helper classes provide a robust and maintainable foundation on which to build upon.
 
@@ -15,14 +21,15 @@ Simple implementation, flexible customization options, optimized CSS output, sma
 - [Mixins](#mixins)
 - [Browser Compatibility](#browser-compatibility)
 - [Credits & Attribution](#credits--attribution)
+- [Contact](#contact)
 - [License](#license)
 
 ------
 
 ## Requirements
 
-* LibSass 3.2+
-* Ruby Sass 3.4+
+- LibSass 3.2+
+- Ruby Sass 3.4+
 
 ## Installation
 
@@ -60,8 +67,8 @@ The default settings provide a sensible starting point for new projects:
      - Font size is increased to 16px
      - Line height adjusts to 24px (1.5rem)
   2. At 90em (1440px):
-     -  Font size increases to 18px
-     -  Line height adjusts to 27px (1.5rem)
+     - Font size increases to 18px
+     - Line height adjusts to 27px (1.5rem)
 
 **Applying the vertical rhythm reset**
 
@@ -250,7 +257,7 @@ The `$vr-helpers` global variable is a map that contains settings used to genera
 - Modify the map keys and values as needed (see the [SassDoc documentation](http://jhildenbiddle.github.io/vertical-rhythm-reset/sassdoc/) for details)
   - The top-level key is the property which CSS classes will be generated for
   - `count` is the number of variations to generate
-  - `prefix` is the portion of the generated class name that will preceed the numeric value
+  - `prefix` is the portion of the generated class name that will precede the numeric value
   - `suffix` is the portion of the generated class name that will proceed the numeric value
 - Set the value to `false` to disable responsive typography and vertical rhythm grids
 
@@ -424,21 +431,21 @@ See [SassDoc documentation](http://jhildenbiddle.github.io/vertical-rhythm-reset
 
 **Arguments (Optional)**
 
-| Name            | Description                           | Type                       | Default             |
-| --------------- | ------------------------------------- | -------------------------- | ------------------- |
-| `$box‑sizing`   | Box sizing method                     | String                     | `$vr‑box‑sizing`    |
-| `$font‑size`    | Root element font size                | Number, Length(px\|rem\|%) | `$vr‑font‑size`     |
-| `$line‑height`  | Line height                           | Number, Length(px\|rem\|%) | `$vr‑line‑height`   |
-| `$moduar‑scale` | Modular type scale                    | Number, String             | `$vr‑modular‑scale` |
-| `$grid‑color`   | Vertical rhythm grid color            | Color                      | `$vr‑grid‑color`    |
-| `$breakpoints`  | Breakpoint settings                   | Map\|`false`               | `$vr‑breakpoints`   |
-| `$helpers`      | Helper CSS rules and classes settings | Map\|`false`               | `$vr‑helpers`       |
+| Name             | Description                           | Type                       | Default             |
+| ---------------- | ------------------------------------- | -------------------------- | ------------------- |
+| `$box‑sizing`    | Box sizing method                     | String                     | `$vr‑box‑sizing`    |
+| `$font‑size`     | Root element font size                | Number, Length(px\|rem\|%) | `$vr‑font‑size`     |
+| `$line‑height`   | Line height                           | Number, Length(px\|rem\|%) | `$vr‑line‑height`   |
+| `$modular‑scale` | Modular type scale                    | Number, String             | `$vr‑modular‑scale` |
+| `$grid‑color`    | Vertical rhythm grid color            | Color                      | `$vr‑grid‑color`    |
+| `$breakpoints`   | Breakpoint settings                   | Map\|`false`               | `$vr‑breakpoints`   |
+| `$helpers`       | Helper CSS rules and classes settings | Map\|`false`               | `$vr‑helpers`       |
 
 **SCSS: Global Variables**
 
 ```scss
 // Global variables
-$vr-box-sizin    : border-box;
+$vr-box-sizing   : border-box;
 $vr-font-size    : 14px;
 $vr-line-height  : 1.5;
 $vr-modular-scale: minor-third;
@@ -480,7 +487,7 @@ See [SassDoc documentation](http://jhildenbiddle.github.io/vertical-rhythm-reset
 | `$color`     | Grid line and element highlight color    | Color   | `$vr‑grid‑color` |
 | `$lines`     | Displays vertical rhythm grid lines      | Boolean | `true`           |
 | `$highlight` | Sets the background color of all elements to a semi-transparent variation of the grid color specified to help verify alignment with the vertical rhythm grid. | Boolean | `true`           |
-| `$detail`    | Displays a floating panel with the active breakpoint width, font-size, line-height and modular scale. This is rendered as psuedo content (`:before`) on the `<body>` element. | Boolean | `true`           |
+| `$detail`    | Displays a floating panel with the active breakpoint width, font-size, line-height and modular scale. This is rendered as pseudo content (`:before`) on the `<body>` element. | Boolean | `true`           |
 
 **SASS**
 
@@ -547,7 +554,7 @@ See [SassDoc documentation](http://jhildenbiddle.github.io/vertical-rhythm-reset
     $width: 5,
     $line-height: 5
   );
-  
+
   text-align: centered;
 }
 
@@ -621,14 +628,14 @@ Vertical Rhythm Reset is compatible with "evergreen" browsers such as Chrome, Ed
 - [*Groove to a Vertical Rhythm*](http://inlehmansterms.net/2014/06/09/groove-to-a-vertical-rhythm) by Jonathan Lehman.
 - [*Optimizing SVGs in data URIs*](http://codepen.io/tigt/post/optimizing-svgs-in-data-uris) by Taylor Hunt.
 
+## Contact
+
+- Create a [Github issue](https://github.com/jhildenbiddle/vertical-rhythm-reset/issues) for bug reports, feature requests, or questions
+- Follow [@jhildenbiddle](https://twitter.com/jhildenbiddle) for announcements
+- Add a [star on GitHub](https://github.com/jhildenbiddle/vertical-rhythm-reset) or [tweet](https://twitter.com/intent/tweet?url=https%3A%2F%2Fgithub.com%2Fjhildenbiddle%2Fvertical-rhythm-reset&hashtags=css,sass,scss,frontend) to support the project!
+
 ## License
 
-**The MIT License (MIT)**
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/jhildenbiddle/vertical-rhythm-reset/blob/master/LICENSE) for details.
 
-Copyright (c) 2017 John Hildenbiddle ([@jhildenbiddle](https://twitter.com/jhildenbiddle))
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Copyright (c) 2016 John Hildenbiddle ([@jhildenbiddle](https://twitter.com/jhildenbiddle))
