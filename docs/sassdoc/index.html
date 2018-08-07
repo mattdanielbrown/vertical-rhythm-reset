@@ -639,7 +639,8 @@ body {
             margin-bottom: 0;
             padding-top: 0;
             padding-bottom: 0;
-            font: inherit;
+            font-family: inherit;
+            font-size: inherit;
 
             // Required for inline elements for alignment
             vertical-align: bottom;
@@ -672,17 +673,25 @@ body {
             border-color: $_vr-border-color;
         }
 
-        iframe {
-            border: 0;
+        em,
+        i {
+            font-style: italic;
         }
 
-        // Monospace
-        code,
-        kbd,
-        pre,
-        samp {
-            font-family: monospace;
-            font-size: 0.875em;
+        // Fieldset
+        // https://thatemil.com/blog/2015/01/03/reset-your-fieldset/
+        fieldset {
+            padding-top: 0.01em;
+            padding-bottom: 0;
+            min-width: 0;
+
+            body:not(:-moz-handler-blocked) &amp; {
+                display: table-cell;
+            }
+        }
+
+        iframe {
+            border: 0;
         }
 
         // Small Text
@@ -690,11 +699,6 @@ body {
         sub,
         sup {
             font-size: 0.875em;
-        }
-
-        sub,
-        sup {
-            line-height: 0;
         }
 
         // Margins
@@ -723,14 +727,15 @@ body {
         sub,
         sup {
             position: relative;
+            line-height: 0;
         }
 
         sub {
-            bottom: -0.2em;
+            vertical-align: sub;
         }
 
         sup {
-            top: -0.2em;
+            vertical-align: super;
         }
 
         table {
@@ -740,7 +745,7 @@ body {
 
         // Normalize.css (subset)
         // https://necolas.github.io/normalize.css/
-        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
         // Add the correct display in IE 9-
         // 1. Add the correct display in Edge, IE, and Firefox
         // 2. Add the correct display in IE
@@ -767,6 +772,14 @@ body {
             display: inline-block;
         }
 
+        // 1. Correct the inheritance and scaling of font size in all browsers.
+        code,
+        kbd,
+        pre,
+        samp {
+            font-family: monospace, monospace; // 1
+        }
+
         // Add the correct display in iOS 4-7
         audio:not([controls]) {
             display: none;
@@ -785,15 +798,16 @@ body {
             background-color: transparent;
         }
 
-        // Remove the outline on focused links when they are also active or hovered
-        // in all browsers (opinionated)
+        // Remove the outline on focused links when they are also active or
+        // hovered in all browsers (opinionated)
         a:active,
         a:hover {
             outline-width: 0;
         }
 
         // 1. Remove the bottom border in Firefox 39-
-        // 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari
+        // 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and
+        //    Safari
         abbr[title] {
             border-bottom: none; // 1
             text-decoration: underline; //2
@@ -843,15 +857,18 @@ body {
             text-transform: none;
         }
 
-        // Change the cursor in all browsers (opinionated)
+        // 1. Change the cursor in all browsers (opinionated)
+        // 2. Correct the inability to style clickable types in iOS and Safari
         button,
         [type=&quot;button&quot;],
         [type=&quot;reset&quot;],
         [type=&quot;submit&quot;] {
             cursor: pointer;
+            -webkit-appearance: button; // 2
         }
 
-        // Restore the default cursor to disabled elements unset by the previous rule
+        // Restore the default cursor to disabled elements unset by the previous
+        // rule
         [disabled] {
             cursor: default;
         }
@@ -868,22 +885,27 @@ body {
 
         // Remove the inner border and padding in Firefox
         button::-moz-focus-inner,
-        input::-moz-focus-inner {
-            border: 0;
+        [type=&quot;button&quot;]::-moz-focus-inner,
+        [type=&quot;reset&quot;]::-moz-focus-inner,
+        [type=&quot;submit&quot;]::-moz-focus-inner {
+            border-style: none;
             padding: 0;
         }
 
         // Restore the focus styles unset by the previous rule
         button:-moz-focusring,
-        input:-moz-focusring {
+        [type=&quot;button&quot;]:-moz-focusring,
+        [type=&quot;reset&quot;]:-moz-focusring,
+        [type=&quot;submit&quot;]:-moz-focusring {
             outline: 1px dotted ButtonText;
         }
 
         // 1. Correct the text wrapping in Edge and IE
         // 2. Correct the color inheritance from `fieldset` elements in IE
-        // 3. Remove the padding so developers are not caught out when they zero out
-        //    `fieldset` elements in all browsers
+        // 3. Remove the padding so developers are not caught out when they zero
+        //    out `fieldset` elements in all browsers
         legend {
+            box-sizing: border-box; // 1
             color: inherit; //2
             display: table; // 1
             max-width: 100%; // 1
@@ -910,9 +932,11 @@ body {
             height: auto;
         }
 
-        // Correct the odd appearance of search inputs in Chrome and Safari
+        // 1. Correct the odd appearance of search inputs in Chrome and Safari
+        // 2. Correct the outline style in Safari
         [type=&quot;search&quot;] {
-            -webkit-appearance: textfield;
+            -webkit-appearance: textfield; // 1
+            outline-offset: -2px; // 2
         }
 
         // Remove the inner padding and cancel buttons in Chrome on OS X and
@@ -921,6 +945,13 @@ body {
         [type=&quot;search&quot;]::-webkit-search-decoration {
             -webkit-appearance: none;
         }
+
+        // 1. Correct the inability to style clickable types in iOS and Safari.
+        // 2. Change font properties to `inherit` in Safari.
+       ::-webkit-file-upload-button {
+            -webkit-appearance: button; // 1
+            font: inherit; // 2
+       }
     }
 
     // Alignment

@@ -50,7 +50,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Apple System', 'Segoe UI',
         'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
         'Helvetica Neue', sans-serif;
-     font-weight: 300;
+    font-weight: 300;
 
     // Vertical Rhythm Grid
     &.show-grid {
@@ -85,6 +85,7 @@ a {
 }
 
 h1, h2, h3, h4 {
+    font-weight: inherit;
     color: $color-black-soft;
 }
 
