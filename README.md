@@ -9,8 +9,8 @@ The perfect starting point for CSS normalization, responsive vertical rhythm gri
 
 Simple implementation, flexible customization options, optimized CSS output, smart mixins for effortless grid alignment and a range of helper classes provide a robust and maintainable foundation on which to build upon.
 
-- [**Home Page**](http://jhildenbiddle.github.io/vertical-rhythm-reset/)
-- [**SassDocs**](http://jhildenbiddle.github.io/vertical-rhythm-reset/sassdoc/)
+- [Home Page](http://jhildenbiddle.github.io/vertical-rhythm-reset/)
+- [SassDocs](http://jhildenbiddle.github.io/vertical-rhythm-reset/sassdoc/)
 
 ------
 
@@ -638,4 +638,4 @@ Vertical Rhythm Reset is compatible with "evergreen" browsers such as Chrome, Ed
 
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/jhildenbiddle/vertical-rhythm-reset/blob/master/LICENSE) for details.
 
-Copyright (c) 2016 John Hildenbiddle ([@jhildenbiddle](https://twitter.com/jhildenbiddle))
+Copyright (c) John Hildenbiddle ([@jhildenbiddle](https://twitter.com/jhildenbiddle))
