@@ -1101,11 +1101,12 @@ body > footer {
   text-align: center;
 }
 
-body > footer iframe[src*="github.io"],
-body > footer iframe[src*="twitter.com"] {
-  height: 28px;
-  margin-top: calc((3.00002rem - 28px) / 2);
-  margin-bottom: calc(1.50001rem + ((3.00002rem - 28px) / 2));
+body > footer .buttons > * {
+  vertical-align: baseline;
+}
+
+body > footer .buttons > *:not(:first-child) {
+  margin-left: 0.5em;
 }
 
 @media (min-width: 48em) {

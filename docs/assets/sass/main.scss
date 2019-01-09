@@ -332,12 +332,14 @@ body > header {
 body > footer {
     text-align: center;
 
-    iframe[src*="github.io"],
-    iframe[src*="twitter.com"] {
-        @include vr(
-            $height       : 28px,
-            $margin-bottom: 1
-        );
+    .buttons {
+        > * {
+            vertical-align: baseline;
+
+            &:not(:first-child) {
+                margin-left: 0.5em;
+            }
+        }
     }
 }
 
