@@ -38,10 +38,10 @@
     "watch:sassdoc": "nodemon --watch dist -e scss -x npm run build:sassdoc"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.3",
-    "node-sass": "^4.11.0",
-    "nodemon": "^1.18.9",
-    "rimraf": "^2.6.3",
-    "sassdoc": "^2.5.1"
+    "browser-sync": "^2.26.7",
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.19.2",
+    "rimraf": "^2.7.1",
+    "sassdoc": "^2.7.1"
   }
 }
