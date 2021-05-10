@@ -1,6 +1,6 @@
 {
   "name": "vertical-rhythm-reset",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "The perfect starting point for CSS normalization, responsive vertical rhythm grids and modular scale typography. ",
   "author": "John Hildenbiddle",
   "license": "MIT",
@@ -13,45 +13,35 @@
     "url": "https://github.com/jhildenbiddle/vertical-rhythm-reset/issues"
   },
   "keywords": [
-    "vertical",
-    "rhythm",
-    "grid",
-    "vertical rhythm",
-    "vertical rhythm reset",
-    "vertical-rhythm",
-    "vertical-rhythm-reset",
-    "vertical grid",
-    "modular",
-    "scale",
-    "typography",
-    "modular scale",
-    "modular scale typography",
-    "modular typography",
     "css",
-    "reset",
+    "grid",
+    "mixin",
+    "modular",
     "normalize",
-    "css reset",
-    "css normalize",
-    "font",
-    "font size",
+    "reset",
+    "rhythm",
     "sass",
-    "scss"
+    "scale",
+    "scss",
+    "vertical"
   ],
   "main": "dist/_vertical-rhythm-reset.scss",
   "scripts": {
-    "build": "npm run sass-build & npm run sassdoc-build",
-    "deploy": "gh-pages -d site",
-    "sass-build": "node-sass -wr --include-path dist --output-style expanded site/assets/sass -o site/assets/css",
-    "sassdoc-build": "nodemon --watch dist -e scss -x 'sassdoc ./dist -d ./site/sassdoc'",
-    "serve": "browser-sync start --server 'site' --files 'site/**/*.{css,html}' --no-open --no-notify",
-    "start": "npm run serve & npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run build:sass & npm run build:sassdoc",
+    "clean": "rimraf docs/assets/css/* docs/sassdoc/*",
+    "build:sass": "node-sass --output-style expanded --recursive --include-path dist docs/assets/sass --output docs/assets/css",
+    "build:sassdoc": "sassdoc ./dist -d ./docs/sassdoc",
+    "serve": "browser-sync start --server 'docs' --files 'docs/*.html' 'docs/**/*.css' --no-open --no-notify",
+    "start": "npm run serve & npm run watch",
+    "watch": "npm run watch:sass & npm run watch:sassdoc",
+    "watch:sass": "npm run build:sass && npm run build:sass -- -w",
+    "watch:sassdoc": "nodemon --watch dist -e scss -x npm run build:sassdoc"
   },
   "devDependencies": {
-    "browser-sync": "^2.12.3",
-    "gh-pages": "^0.11.0",
-    "node-sass": "^3.4.2",
-    "nodemon": "^1.9.1",
-    "sassdoc": "^2.1.20"
+    "browser-sync": "^2.26.7",
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.19.2",
+    "rimraf": "^2.7.1",
+    "sassdoc": "^2.7.1"
   }
 }
