@@ -1,7 +1,8 @@
-# Vertical Rhythm Reset
+# Vertical Rhythm Reset <!-- omit in toc -->
 
 [![NPM](https://img.shields.io/npm/v/vertical-rhythm-reset.svg?style=flat-square)](https://www.npmjs.com/package/vertical-rhythm-reset)
-[![Codacy grade](https://img.shields.io/codacy/grade/594f7908b74a4e89bc3cb3265f966c52.svg?style=flat-square)](https://www.codacy.com/app/jhildenbiddle/vertical-rhythm-reset?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jhildenbiddle/vertical-rhythm-reset&amp;utm_campaign=Badge_Grade)
+[![GitHub Workflow Status (master)](https://img.shields.io/github/workflow/status/jhildenbiddle/vertical-rhythm-reset/Build/master?label=checks&style=flat-square)](https://github.com/jhildenbiddle/vertical-rhythm-reset/actions?query=branch%3Amaster+)
+[![Codacy grade](https://img.shields.io/codacy/grade/01917626fcc14886ac621c1928a2961f?style=flat-square)](https://app.codacy.com/gh/jhildenbiddle/vertical-rhythm-reset/dashboard)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://github.com/jhildenbiddle/vertical-rhythm-reset/blob/master/LICENSE)
 [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?url=https%3A%2F%2Fgithub.com%2Fjhildenbiddle%2Fvertical-rhythm-reset&hashtags=css,sass,scss,frontend)
 
@@ -109,7 +110,7 @@ The default settings provide a sensible starting point for new projects:
 
 There are many configuration options available that allow you to customize the Vertical Rhythm Reset as you see fit. The sections below provide an overview of how to configure settings. For complete details on variable and mixin settings, please review the [SassDoc documentation](http://jhildenbiddle.github.io/vertical-rhythm-reset/sassdoc/).
 
-### Box Sizing
+### Box Sizing  <!-- omit in toc -->  <!-- omit in toc -->
 
 The `$vr-box-sizing` global variable is used to generate a CSS rule that applies the box-sizing method to all elements when the `vr-reset()` [mixin](#vr-reset) is called. The box-sizing method is also used in the `vr()` [mixin](#vr) to calculate border offset values.
 
@@ -133,7 +134,7 @@ html {
 }
 ```
 
-### Vertical Rhythm Grid
+### Vertical Rhythm Grid  <!-- omit in toc -->
 
 A vertical rhythm grid provides symmetry to your project by aligning elements to an invisible-yet-recognizable visual layout pattern.
 
@@ -164,7 +165,7 @@ $vr-line-height: 1.5;
 
 Use the `vr()` [mixin](#vr) to set element height, margin and padding to multiples of the vertical rhythm grid row height to ensure alignment. The `vr()` [mixin](#vr) also calculates offset rules to allow bordered elements to align to the vertical rhythm grid.
 
-### Modular Scale Typography
+### Modular Scale Typography  <!-- omit in toc -->
 
 Modular scale typography provides a harmonious range of proportional font sizes. This calculated range of font sizes also helps answer the question, "What font-sizes should I use for this project?" and allows changing these sizes project-wide by modifying a single global variable.
 
@@ -198,7 +199,7 @@ $vr-modular-scale: minor-third;
 
 Use the `vr()` [mixin](#vr) to set the font-size of elements to a modular scale multiple. The mixin will calculate the number of vertical rhythm rows a given font size should occupy.
 
-### Responsive Layouts
+### Responsive Layouts  <!-- omit in toc -->
 
 The `$vr-breakpoints` global variable is a map that contains breakpoint settings used to generate media queries and recalculate values for responsive layouts.
 
@@ -247,7 +248,7 @@ $vr-breakpoints: (
 );
 ```
 
-### Helper Classes & Rules
+### Helper Classes & Rules  <!-- omit in toc -->
 
 The `$vr-helpers` global variable is a map that contains settings used to generate vertical rhythm helper CSS rules and classes. These CSS rules and classes provide a convenient way to set typography and vertical rhythm properties using CSS class names and HTML properties (instead of or in addition to doing the same in SCSS).
 
@@ -421,7 +422,7 @@ textarea[rows="1"],
 
 ## Mixins
 
-### vr-reset()
+### vr-reset()  <!-- omit in toc -->
 
 Generates the CSS reset/normalization, vertical rhythm grid and CSS helpers rules and classes. Also generates media queries and recalculated breakpoint values when provided.
 
@@ -474,7 +475,7 @@ $vr-helpers      : (...);
  );
 ```
 
-### vr-grid()
+### vr-grid()  <!-- omit in toc -->
 
 Renders the vertical rhythm grid as a background image and applies a highlight color as a semi-transparent background to all child elements.
 
@@ -501,7 +502,7 @@ body {
 }
 ```
 
-### vr()
+### vr()  <!-- omit in toc -->
 
 Generates CSS rules for vertical rhythm grid alignment and modular scale typography. Use this mixin to specify CSS properties and values to ensure elements align to the vertical rhythm grid.
 
@@ -632,7 +633,7 @@ Vertical Rhythm Reset is compatible with "evergreen" browsers such as Chrome, Ed
 
 - Create a [Github issue](https://github.com/jhildenbiddle/vertical-rhythm-reset/issues) for bug reports, feature requests, or questions
 - Follow [@jhildenbiddle](https://twitter.com/jhildenbiddle) for announcements
-- Add a [star on GitHub](https://github.com/jhildenbiddle/vertical-rhythm-reset) or [tweet](https://twitter.com/intent/tweet?url=https%3A%2F%2Fgithub.com%2Fjhildenbiddle%2Fvertical-rhythm-reset&hashtags=css,sass,scss,frontend) to support the project!
+- Add a ⭐️ [star on GitHub](https://github.com/jhildenbiddle/vertical-rhythm-reset) or ❤️ [tweet](https://twitter.com/intent/tweet?url=https%3A%2F%2Fgithub.com%2Fjhildenbiddle%2Fvertical-rhythm-reset&hashtags=css,sass,scss,frontend) to support the project!
 
 ## License
 
