@@ -29,6 +29,7 @@
   "scripts": {
     "build": "npm run build:sass & npm run build:sassdoc",
     "clean": "rimraf docs/assets/css/* docs/sassdoc/*",
+    "lint": "markdownlint . --ignore node_modules",
     "build:sass": "node-sass --output-style expanded --recursive --include-path dist docs/assets/sass --output docs/assets/css",
     "build:sassdoc": "sassdoc ./dist -d ./docs/sassdoc",
     "serve": "browser-sync start --server 'docs' --files 'docs/*.html' 'docs/**/*.css' --no-open --no-notify",
@@ -39,6 +40,7 @@
   },
   "devDependencies": {
     "browser-sync": "^2.27.5",
+    "markdownlint-cli": "^0.28.1",
     "node-sass": "^6.0.1",
     "nodemon": "^2.0.12",
     "rimraf": "^3.0.2",
