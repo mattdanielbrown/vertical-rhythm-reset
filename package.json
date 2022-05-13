@@ -50,7 +50,7 @@
   "devDependencies": {
     "browser-sync": "^2.12.3",
     "gh-pages": "^0.11.0",
-    "node-sass": "^3.4.2",
+    "node-sass": "^7.0.1",
     "nodemon": "^1.9.1",
     "sassdoc": "^2.1.20"
   }
