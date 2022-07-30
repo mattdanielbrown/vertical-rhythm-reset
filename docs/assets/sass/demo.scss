@@ -2,7 +2,7 @@
 
 // Imports
 // =============================================================================
-@import 'vertical-rhythm-reset';
+@use 'vertical-rhythm-reset' as *;
 
 // Variables
 // =============================================================================
@@ -48,21 +48,21 @@ $test-border-width: 3px;
 .test-offset-height,
 .test-offset-margin,
 .test-offset-padding {
-    border: $test-border-width solid $_vr-border-color;
+    border: $test-border-width solid black;
 }
 
 .test-offset-top,
 .test-offset-height-top,
 .test-offset-margin-top,
 .test-offset-padding-top {
-    border-top: $test-border-width solid $_vr-border-color
+    border-top: $test-border-width solid black;
 }
 
 .test-offset-bottom,
 .test-offset-height-bottom,
 .test-offset-margin-bottom,
 .test-offset-padding-bottom {
-    border-bottom: $test-border-width solid $_vr-border-color
+    border-bottom: $test-border-width solid black;
 }
 
 // Offset Only

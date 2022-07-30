@@ -28,22 +28,25 @@
   "main": "dist/_vertical-rhythm-reset.scss",
   "scripts": {
     "build": "npm run build:sass & npm run build:sassdoc",
+    "build:sass": "sass docs/assets/sass:docs/assets/css --style=expanded --load-path=dist ",
+    "build:sassdoc": "sassdoc ./dist -d ./docs/sassdoc",
     "clean": "rimraf docs/assets/css/* docs/sassdoc/*",
     "lint": "markdownlint . --ignore node_modules",
-    "build:sass": "node-sass --output-style expanded --recursive --include-path dist docs/assets/sass --output docs/assets/css",
-    "build:sassdoc": "sassdoc ./dist -d ./docs/sassdoc",
+    "prepare": "npm run clean && npm run build",
     "serve": "browser-sync start --server 'docs' --files 'docs/*.html' 'docs/**/*.css' --no-open --no-notify",
     "start": "npm run serve & npm run watch",
+    "test": "npm run lint",
     "watch": "npm run watch:sass & npm run watch:sassdoc",
     "watch:sass": "npm run build:sass && npm run build:sass -- -w",
-    "watch:sassdoc": "nodemon --watch dist -e scss -x npm run build:sassdoc"
+    "watch:sassdoc": "nodemon --watch dist -e scss -x npm run build:sassdoc",
+    "version": "npm run prepare && npm run test"
   },
   "devDependencies": {
-    "browser-sync": "^2.27.5",
-    "markdownlint-cli": "^0.28.1",
-    "node-sass": "^6.0.1",
-    "nodemon": "^2.0.12",
+    "browser-sync": "^2.27.10",
+    "markdownlint-cli": "^0.32.1",
+    "nodemon": "^2.0.19",
     "rimraf": "^3.0.2",
-    "sassdoc": "^2.7.3"
+    "sass": "^1.54.0",
+    "sassdoc": "^2.7.4"
   }
 }

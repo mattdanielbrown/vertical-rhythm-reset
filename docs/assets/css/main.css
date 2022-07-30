@@ -1,15 +1,13 @@
 @font-face {
-  font-family: 'Segoe UI';
+  font-family: "Segoe UI";
   src: local("Segoe UI");
   font-weight: normal;
 }
-
 @font-face {
-  font-family: 'Segoe UI';
+  font-family: "Segoe UI";
   src: local("Segoe UI Semibold");
   font-weight: bold;
 }
-
 /* Vertical Rhythm Reset: Base */
 *,
 *:before,
@@ -40,7 +38,7 @@ body {
 
 button,
 fieldset,
-input:not([type="radio"]):not([type="checkbox"]),
+input:not([type=radio]):not([type=checkbox]),
 select,
 textarea {
   border-width: 1px;
@@ -58,7 +56,6 @@ fieldset {
   padding-bottom: 0;
   min-width: 0;
 }
-
 body:not(:-moz-handler-blocked) fieldset {
   display: table-cell;
 }
@@ -73,8 +70,8 @@ sup {
   font-size: 0.875em;
 }
 
-input[type="radio"],
-input[type="checkbox"] {
+input[type=radio],
+input[type=checkbox] {
   margin-bottom: 0.325em;
 }
 
@@ -82,9 +79,8 @@ hr {
   position: relative;
   border: 0;
 }
-
 hr:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 0;
@@ -200,9 +196,9 @@ select {
 }
 
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type=button],
+[type=reset],
+[type=submit] {
   cursor: pointer;
   -webkit-appearance: button;
 }
@@ -212,24 +208,24 @@ button,
 }
 
 button,
-html [type="button"],
-[type="reset"],
-[type="submit"] {
+html [type=button],
+[type=reset],
+[type=submit] {
   -webkit-appearance: button;
 }
 
 button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
 
 button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -246,24 +242,24 @@ textarea {
   overflow: auto;
 }
 
-[type="checkbox"],
-[type="radio"] {
+[type=checkbox],
+[type=radio] {
   box-sizing: border-box;
   padding: 0;
 }
 
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
-[type="search"] {
+[type=search] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
 
-[type="search"]::-webkit-search-cancel-button,
-[type="search"]::-webkit-search-decoration {
+[type=search]::-webkit-search-cancel-button,
+[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -362,7 +358,7 @@ h5 {
 }
 
 h6 {
-  font-size: 0.83333rem;
+  font-size: 0.8333333333rem;
   line-height: 1.50001rem;
 }
 
@@ -762,37 +758,32 @@ textarea[rows="10"],
     font-size: 16px;
   }
 }
-
 @media (min-width: 90em) {
   /* Vertical Rhythm Reset: Breakpoint Alignment */
   :root {
     font-size: 18px;
   }
 }
-
 @media only screen and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
   /* Vertical Rhythm Reset: Fix for mobile select[multiple] elements */
   select[multiple],
-  select[multiple][size] {
+select[multiple][size] {
     height: 1.50001rem;
   }
 }
-
 body {
   color: #444;
-  font-family: -apple-system, BlinkMacSystemFont, 'Apple System', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Apple System", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-weight: 300;
 }
-
 body.show-grid {
   /* Vertical Rhythm Reset: Grid Lines */
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='21px' height='21px' viewBox='0 0 21 21' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='grid' height='21' width='1000' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 21 0 L -1 0 -1 21' fill='none' stroke='rgba(233, 30, 99, 0.5)' stroke-width='1' /%3E%3C/pattern%3E%3C/defs%3E%3Crect width='21px' height='21px' fill='url(%23grid)' /%3E%3C/svg%3E") !important;
   background-color: transparent !important;
 }
-
 body.show-grid:before {
   /* Vertical Rhythm Reset: Grid Detail */
-  content: "Vertical Rhythm Reset\a--------------------------\a breakpoint   : root\a font-size    : 14px\aline-height  : 21px\amodular-scale: minor-third" !important;
+  content: "Vertical Rhythm Reset\a  --------------------------\a  breakpoint   : root\a  font-size    : 14px\a  line-height  : 21px\a  modular-scale: minor-third" !important;
   display: table !important;
   position: fixed !important;
   z-index: 2147483647 !important;
@@ -807,12 +798,10 @@ body.show-grid:before {
   line-height: 20px !important;
   white-space: pre !important;
 }
-
 body.show-grid *:not(hr) {
   /* Vertical Rhythm Reset: Grid Highlight */
   background-color: rgba(233, 30, 99, 0.1) !important;
 }
-
 @media (min-width: 60em) {
   body.show-grid {
     /* Vertical Rhythm Reset: Grid Lines */
@@ -821,7 +810,7 @@ body.show-grid *:not(hr) {
   }
   body.show-grid:before {
     /* Vertical Rhythm Reset: Grid Detail */
-    content: "Vertical Rhythm Reset\a--------------------------\a breakpoint   : 60em\a font-size    : 16px\aline-height  : 24px\amodular-scale: minor-third" !important;
+    content: "Vertical Rhythm Reset\a  --------------------------\a  breakpoint   : 60em\a  font-size    : 16px\a  line-height  : 24px\a  modular-scale: minor-third" !important;
     display: table !important;
     position: fixed !important;
     z-index: 2147483647 !important;
@@ -837,7 +826,6 @@ body.show-grid *:not(hr) {
     white-space: pre !important;
   }
 }
-
 @media (min-width: 90em) {
   body.show-grid {
     /* Vertical Rhythm Reset: Grid Lines */
@@ -846,7 +834,7 @@ body.show-grid *:not(hr) {
   }
   body.show-grid:before {
     /* Vertical Rhythm Reset: Grid Detail */
-    content: "Vertical Rhythm Reset\a--------------------------\a breakpoint   : 90em\a font-size    : 18px\aline-height  : 27px\amodular-scale: minor-third" !important;
+    content: "Vertical Rhythm Reset\a  --------------------------\a  breakpoint   : 90em\a  font-size    : 18px\a  line-height  : 27px\a  modular-scale: minor-third" !important;
     display: table !important;
     position: fixed !important;
     z-index: 2147483647 !important;
@@ -868,9 +856,8 @@ a {
   color: #1976d2;
   text-decoration: none;
 }
-
 a:before {
-  content: '';
+  content: "";
   position: absolute;
   right: 50%;
   left: 50%;
@@ -880,7 +867,6 @@ a:before {
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
-
 a:hover:before {
   right: 0;
   left: 0;
@@ -893,7 +879,7 @@ h1, h2, h3, h4 {
 }
 
 h2, h4 {
-  color: #e91e63;
+  color: rgb(233, 30, 99);
 }
 
 h3, h4 {
@@ -919,13 +905,13 @@ body > footer {
 }
 
 .button {
-  font-size: 0.83333rem;
+  font-size: 0.8333333333rem;
   line-height: 1.50001rem;
   -webkit-transform: translateY(-1px);
   -ms-transform: translateY(-1px);
   transform: translateY(-1px);
   margin: 1.50001rem auto -2px;
-  padding: 0.75001rem 1.50001rem;
+  padding: 0.750005rem 1.50001rem;
   display: block;
   width: 80%;
   border: 1px solid #ccc;
@@ -936,11 +922,9 @@ body > footer {
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
-
 .button:before {
   content: none;
 }
-
 .button:hover {
   border-color: #1976d2;
 }
@@ -949,11 +933,9 @@ body > footer {
   display: inline-block;
   position: relative;
 }
-
 .checkbox + .checkbox {
   margin-left: 1em;
 }
-
 .checkbox input {
   position: absolute;
   z-index: 1;
@@ -970,21 +952,18 @@ body > footer {
   -ms-appearance: none;
   appearance: none;
 }
-
 .checkbox input:checked + label:before {
   border: 2px solid #1976d2;
   background: #1976d2;
 }
-
 .checkbox input:checked + label:after {
   left: 19px;
   height: 18px;
   width: 18px;
   background: #fff;
 }
-
 .checkbox label {
-  font-size: 0.83333rem;
+  font-size: 0.8333333333rem;
   line-height: 1.50001rem;
   height: 24px;
   margin-top: calc((3.00002rem - 24px) / 2);
@@ -993,18 +972,16 @@ body > footer {
   padding-left: calc(40px + 0.625rem);
   font-weight: 600;
 }
-
 @media (min-width: 60em) {
   .checkbox label {
-    font-size: 0.83333rem;
+    font-size: 0.8333333333rem;
     line-height: 1.50001rem;
     margin-top: calc((1.50001rem - 24px) / 2);
     margin-bottom: calc((1.50001rem - 24px) / 2);
   }
 }
-
 .checkbox label:before, .checkbox label:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   border-radius: 100vw;
@@ -1013,7 +990,6 @@ body > footer {
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
-
 .checkbox label:before {
   left: 0;
   height: 24px;
@@ -1022,7 +998,6 @@ body > footer {
   border: 2px solid #ccc;
   background: #fff;
 }
-
 .checkbox label:after {
   left: 4px;
   height: 16px;
@@ -1037,13 +1012,11 @@ body > header {
 .intro {
   padding-bottom: 4.50003rem;
 }
-
 .intro .grid-toggle-wrap {
   margin-top: 3.00002rem;
   margin-bottom: 3.00002rem;
   text-align: center;
 }
-
 .intro .checkbox {
   margin-right: 2rem;
 }
@@ -1060,7 +1033,6 @@ body > header {
   border-color: #ccc;
   background: #f7f7f7;
 }
-
 .features ul {
   margin-top: 0;
   margin-bottom: 0;
@@ -1071,25 +1043,21 @@ body > header {
   padding-top: 4.50003rem;
   padding-bottom: 1.50001rem;
 }
-
 .demo header {
   position: relative;
 }
-
 .demo iframe {
   height: 600px;
   margin-top: calc((43.50029rem - 600px) / 2);
   margin-bottom: calc((43.50029rem - 600px) / 2);
   border-bottom: 1px solid #eee;
 }
-
 @media (min-width: 60em) {
   .demo iframe {
     margin-top: calc((37.50025rem - 600px) / 2);
     margin-bottom: calc((37.50025rem - 600px) / 2);
   }
 }
-
 @media (min-width: 90em) {
   .demo iframe {
     margin-top: calc((34.50023rem - 600px) / 2);
@@ -1100,19 +1068,17 @@ body > header {
 body > footer {
   text-align: center;
 }
-
 body > footer .buttons > * {
   vertical-align: baseline;
 }
-
 body > footer .buttons > *:not(:first-child) {
   margin-left: 0.5em;
 }
 
 @media (min-width: 48em) {
   body > header,
-  main > section,
-  body > footer {
+main > section,
+body > footer {
     padding-right: 5%;
     padding-left: 5%;
   }
@@ -1146,3 +1112,5 @@ body > footer .buttons > *:not(:first-child) {
     margin-right: 3rem;
   }
 }
+
+/*# sourceMappingURL=main.css.map */

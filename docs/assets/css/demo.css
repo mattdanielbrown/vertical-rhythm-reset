@@ -28,7 +28,7 @@ body {
 
 button,
 fieldset,
-input:not([type="radio"]):not([type="checkbox"]),
+input:not([type=radio]):not([type=checkbox]),
 select,
 textarea {
   border-width: 1px;
@@ -46,7 +46,6 @@ fieldset {
   padding-bottom: 0;
   min-width: 0;
 }
-
 body:not(:-moz-handler-blocked) fieldset {
   display: table-cell;
 }
@@ -61,8 +60,8 @@ sup {
   font-size: 0.875em;
 }
 
-input[type="radio"],
-input[type="checkbox"] {
+input[type=radio],
+input[type=checkbox] {
   margin-bottom: 0.325em;
 }
 
@@ -70,9 +69,8 @@ hr {
   position: relative;
   border: 0;
 }
-
 hr:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 0;
@@ -188,9 +186,9 @@ select {
 }
 
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type=button],
+[type=reset],
+[type=submit] {
   cursor: pointer;
   -webkit-appearance: button;
 }
@@ -200,24 +198,24 @@ button,
 }
 
 button,
-html [type="button"],
-[type="reset"],
-[type="submit"] {
+html [type=button],
+[type=reset],
+[type=submit] {
   -webkit-appearance: button;
 }
 
 button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
 
 button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -234,24 +232,24 @@ textarea {
   overflow: auto;
 }
 
-[type="checkbox"],
-[type="radio"] {
+[type=checkbox],
+[type=radio] {
   box-sizing: border-box;
   padding: 0;
 }
 
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
-[type="search"] {
+[type=search] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
 
-[type="search"]::-webkit-search-cancel-button,
-[type="search"]::-webkit-search-decoration {
+[type=search]::-webkit-search-cancel-button,
+[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -350,7 +348,7 @@ h5 {
 }
 
 h6 {
-  font-size: 0.83333rem;
+  font-size: 0.8333333333rem;
   line-height: 1.50001rem;
 }
 
@@ -750,22 +748,19 @@ textarea[rows="10"],
     font-size: 16px;
   }
 }
-
 @media (min-width: 90em) {
   /* Vertical Rhythm Reset: Breakpoint Alignment */
   :root {
     font-size: 18px;
   }
 }
-
 @media only screen and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
   /* Vertical Rhythm Reset: Fix for mobile select[multiple] elements */
   select[multiple],
-  select[multiple][size] {
+select[multiple][size] {
     height: 1.50001rem;
   }
 }
-
 body {
   padding-bottom: 1.50001rem;
   /* Vertical Rhythm Reset: Grid Lines */
@@ -775,10 +770,9 @@ body {
   padding-left: 3%;
   background: #fff;
 }
-
 body:before {
   /* Vertical Rhythm Reset: Grid Detail */
-  content: "Vertical Rhythm Reset\a--------------------------\a breakpoint   : root\a font-size    : 14px\aline-height  : 21px\amodular-scale: minor-third" !important;
+  content: "Vertical Rhythm Reset\a  --------------------------\a  breakpoint   : root\a  font-size    : 14px\a  line-height  : 21px\a  modular-scale: minor-third" !important;
   display: table !important;
   position: fixed !important;
   z-index: 2147483647 !important;
@@ -793,12 +787,10 @@ body:before {
   line-height: 20px !important;
   white-space: pre !important;
 }
-
 body *:not(hr) {
   /* Vertical Rhythm Reset: Grid Highlight */
   background-color: rgba(233, 30, 99, 0.1) !important;
 }
-
 @media (min-width: 60em) {
   body {
     /* Vertical Rhythm Reset: Grid Lines */
@@ -807,7 +799,7 @@ body *:not(hr) {
   }
   body:before {
     /* Vertical Rhythm Reset: Grid Detail */
-    content: "Vertical Rhythm Reset\a--------------------------\a breakpoint   : 60em\a font-size    : 16px\aline-height  : 24px\amodular-scale: minor-third" !important;
+    content: "Vertical Rhythm Reset\a  --------------------------\a  breakpoint   : 60em\a  font-size    : 16px\a  line-height  : 24px\a  modular-scale: minor-third" !important;
     display: table !important;
     position: fixed !important;
     z-index: 2147483647 !important;
@@ -823,7 +815,6 @@ body *:not(hr) {
     white-space: pre !important;
   }
 }
-
 @media (min-width: 90em) {
   body {
     /* Vertical Rhythm Reset: Grid Lines */
@@ -832,7 +823,7 @@ body *:not(hr) {
   }
   body:before {
     /* Vertical Rhythm Reset: Grid Detail */
-    content: "Vertical Rhythm Reset\a--------------------------\a breakpoint   : 90em\a font-size    : 18px\aline-height  : 27px\amodular-scale: minor-third" !important;
+    content: "Vertical Rhythm Reset\a  --------------------------\a  breakpoint   : 90em\a  font-size    : 18px\a  line-height  : 27px\a  modular-scale: minor-third" !important;
     display: table !important;
     position: fixed !important;
     z-index: 2147483647 !important;
@@ -854,7 +845,6 @@ body *:not(hr) {
   margin-top: calc((7.50005rem - 100px) / 2);
   margin-bottom: calc((7.50005rem - 100px) / 2);
 }
-
 @media (min-width: 90em) {
   .test-height-100 {
     margin-top: calc((6.00004rem - 100px) / 2);
@@ -867,14 +857,12 @@ body *:not(hr) {
   margin-top: calc((12.00008rem - 150px) / 2);
   margin-bottom: calc((12.00008rem - 150px) / 2);
 }
-
 @media (min-width: 60em) {
   .test-height-150 {
     margin-top: calc((10.50007rem - 150px) / 2);
     margin-bottom: calc((10.50007rem - 150px) / 2);
   }
 }
-
 @media (min-width: 90em) {
   .test-height-150 {
     margin-top: calc((9.00006rem - 150px) / 2);
@@ -887,14 +875,12 @@ body *:not(hr) {
   margin-top: calc((15.0001rem - 200px) / 2);
   margin-bottom: calc((15.0001rem - 200px) / 2);
 }
-
 @media (min-width: 60em) {
   .test-height-200 {
     margin-top: calc((13.50009rem - 200px) / 2);
     margin-bottom: calc((13.50009rem - 200px) / 2);
   }
 }
-
 @media (min-width: 90em) {
   .test-height-200 {
     margin-top: calc((12.00008rem - 200px) / 2);
@@ -906,21 +892,21 @@ body *:not(hr) {
 .test-offset-height,
 .test-offset-margin,
 .test-offset-padding {
-  border: 3px solid #808080;
+  border: 3px solid black;
 }
 
 .test-offset-top,
 .test-offset-height-top,
 .test-offset-margin-top,
 .test-offset-padding-top {
-  border-top: 3px solid #808080;
+  border-top: 3px solid black;
 }
 
 .test-offset-bottom,
 .test-offset-height-bottom,
 .test-offset-margin-bottom,
 .test-offset-padding-bottom {
-  border-bottom: 3px solid #808080;
+  border-bottom: 3px solid black;
 }
 
 .test-offset {
@@ -1006,3 +992,5 @@ body *:not(hr) {
   margin-bottom: -3px;
   padding-bottom: 1.50001rem;
 }
+
+/*# sourceMappingURL=demo.css.map */
