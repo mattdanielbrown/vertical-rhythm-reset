@@ -18,14 +18,14 @@
 /// Default box sizing method.
 ///
 /// A CSS rule will be generated that sets the box-sizing method of all elements
-/// to this value when the `vr-reset` mixin is called. The box-sizing method is
-/// also used in the `vr` mixin to calculate border offset values.
+/// to this value when the `reset()` mixin is called. The box-sizing method is
+/// also used in the `set()` mixin to calculate border offset values.
 ///
 /// @type String [border-box|content-box]
 $box-sizing: border-box !default;
 
 /// A map used to generate media queries and recalculate values for
-/// responsive layouts when the `vr-reset` mixin is called.
+/// responsive layouts when the `reset()` mixin is called.
 ///
 /// **Customization**
 /// - Make a copy of the default map above as your starting point.
@@ -98,8 +98,8 @@ $breakpoints: (
 ///   setting. There are two solutions to this issues:
 ///   1. Wrap the offset element in another HTML tag and apply the margin to
 ///      the parent element instead.
-///   2. Use the `vr` mixin to apply both the offset and the margins to the
-///      element instead of CSS class names. The `vr` mixin accounts for offset
+///   2. Use the `set()` mixin to apply both the offset and the margins to the
+///      element instead of CSS class names. The `set()` mixin accounts for offset
 ///      elements with margins while classes do not.
 ///
 /// @type Map
@@ -259,7 +259,7 @@ $helpers: (
 /// Default root element font size.
 ///
 /// A `:root` CSS rule will be generated that sets the root element font size to
-/// the specified value when the `vr-reset` mixin is called.
+/// the specified value when the `reset()` mixin is called.
 ///
 /// @type Number|Length(px|rem|%)
 $font-size: 14px !default;
@@ -277,7 +277,7 @@ $grid-color: rgb(233, 30, 99) !default;
 /// This value is used to calculate the vertical rhythm row height by
 /// multiplying the font-size by the line height and converting the result to a
 /// `rem`-based value. A `*` selector CSS rule is then generated when the
-/// `vr-reset` mixin is called that sets the default line height for all
+/// `reset()` mixin is called that sets the default line height for all
 /// elements to this value (the equivalent of one vertical rhythm row).
 ///
 /// @type Number|Length(px|rem|%)
@@ -335,11 +335,11 @@ $_vr-is-root-reset: false;
 // Example:
 // h1 {
 //   /* Will generate media queries from $breakpoints map */
-//   @include set(font-size: 1);
+//   @include vr.set(font-size: 1);
 //
 //   @media (min-width: [custom value]) {
 //     /* Will NOT generate media queries from $breakpoints map */
-//     @include set(font-size: 2);
+//     @include vr.set(font-size: 2);
 //   }
 // }
 $_vr-rendered: ();
@@ -648,21 +648,23 @@ $_vr-border-color: #808080;
 ///   Accepts both unitless and `px`-based unit values.
 ///
 ///   Sets the top offset of an element in pixels using a CSS transform rule.
-///   Depending on which properties were set in the same `vr` mixin call, this
+///   Depending on which properties were set in the same `set()` mixin call, this
 ///   value may also be used to adjust the element height and bottom margin
 ///   for vertical rhythm grid alignment.
 /// @param {Length(px)|Number} $offset-bottom [null]
 ///   Accepts both unitless and `px`-based unit values.
 ///
 ///   Sets the bottom offset of an element in pixels using a negative bottom
-///   margin. Depending on which properties were set in the same `vr` mixin
+///   margin. Depending on which properties were set in the same `set()` mixin
 ///   call, this value may also be used to adjust the element height for
 ///   vertical rhythm grid alignment.
 ///
 /// @example scss SCSS
+///   @use "vertical-rhythm-reset" as vr;
+///
 ///   // Example of setting vertical rhythm properties
 ///   div {
-///     @include set(
+///     @include vr.set(
 ///       $font-size     : 1,
 ///       $height        : 2,
 ///       $margin-top    : 1,
@@ -678,7 +680,7 @@ $_vr-border-color: #808080;
 ///
 ///   // Equivalent example using shorthand arguments
 ///   div {
-///     @include set(
+///     @include vr.set(
 ///       $font-size: 1,
 ///       $height   : 2,
 ///       $margin   : 1 0, // top|bottom: 1, right|left: 0
@@ -1066,12 +1068,14 @@ $_vr-border-color: #808080;
 ///   as pseudo content (`:before`) on the `<body>` element.
 ///
 /// @example scss SCSS
+///   @use "vertical-rhythm-reset" as vr;
+///
 ///   // Call the vertical rhythm reset mixin at root
-///   @include reset();
+///   @include vr.reset();
 ///
 ///   // Call the grid mixin
 ///   body {
-///     @include grid();
+///     @include vr.grid();
 ///   }
 @mixin grid($color: null, $lines: true, $highlight: true, $detail: true) {
     // Placeholder for breakpoint settings
@@ -1193,6 +1197,8 @@ $_vr-border-color: #808080;
 ///   See `$helpers`
 ///
 /// @example scss SCSS: Reset using global variables
+///   @use "vertical-rhythm-reset" as vr;
+///
 ///   // Global variables
 ///   $box-sizing   : border-box;
 ///   $font-size    : 14px;
@@ -1203,13 +1209,15 @@ $_vr-border-color: #808080;
 ///   $helpers      : (...);
 ///
 ///   // Call the mixin at root
-///   @include reset();
+///   @include vr.reset();
 ///
 /// @example scss SCSS: Reset using mixin arguments
+///   @use "vertical-rhythm-reset" as vr;
+///
 ///   // Call the mixin at root
 ///   // Global variables will be updated with specified values
 ///   // Omitted values will default to global variables
-///   @include reset(
+///   @include vr.reset(
 ///     $box-sizing   : border-box,
 ///     $font-size    : 14px,
 ///     $line-height  : 1.5,
