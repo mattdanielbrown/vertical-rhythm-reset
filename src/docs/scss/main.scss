@@ -2,21 +2,21 @@
 
 // Imports
 // =============================================================================
-@use 'vertical-rhythm-reset' as *;
+@use 'vertical-rhythm-reset' as vr;
 
 // Variables
 // =============================================================================
 // Vertical Rhythm Reset
 // -----------------------------------------------------------------------------
-// $vr-font-size    : 14px;
-// $vr-line-height  : 1.5;
-// $vr-modular-scale: false;
-// $vr-breakpoints  : false;
-// $vr-helpers      : false;
+// vr.$font-size    : 14px;
+// vr.$line-height  : 1.5;
+// vr.$modular-scale: false;
+// vr.$breakpoints  : false;
+// vr.$helpers      : false;
 
 // Color: Palette
 // -----------------------------------------------------------------------------
-$color-accent-primary  : $vr-grid-color;
+$color-accent-primary  : vr.$grid-color;
 $color-accent-secondary: #1976d2;
 $color-white-soft      : #f7f7f7;
 $color-gray-soft       : #ccc;
@@ -43,7 +43,7 @@ $time-fast: 0.25s;
 
 // Base
 // =============================================================================
-@include vr-reset();
+@include vr.reset();
 
 body {
     color: $color-gray-dark;
@@ -54,7 +54,7 @@ body {
 
     // Vertical Rhythm Grid
     &.show-grid {
-        @include vr-grid();
+        @include vr.grid();
     }
 }
 
@@ -94,7 +94,7 @@ h2, h4 {
 }
 
 h3, h4 {
-    @include vr(
+    @include vr.vr(
         $font-size: 0
     );
 }
@@ -122,7 +122,7 @@ body > footer {
 // Elements
 // =============================================================================
 .button {
-    @include vr(
+    @include vr.vr(
         $font-size : -1,
         $margin    : 1 auto null auto,
         $padding   : 0.5 1,
@@ -219,7 +219,7 @@ body > footer {
 
     // Container
     label {
-        @include vr(
+        @include vr.vr(
             $font-size: -1,
             $height   : $checkbox-height
         );
@@ -263,7 +263,7 @@ body > footer {
 // Header
 // =============================================================================
 body > header {
-    @include vr(
+    @include vr.vr(
         $margin-top: 2
     );
 }
@@ -271,12 +271,12 @@ body > header {
 // Intro
 // =============================================================================
 .intro {
-    @include vr(
+    @include vr.vr(
         $padding-bottom: 3
     );
 
     .grid-toggle-wrap {
-        @include vr(
+        @include vr.vr(
             $margin: 2 null
         );
         text-align: center;
@@ -290,7 +290,7 @@ body > header {
 // Features
 // =============================================================================
 .features {
-    @include vr(
+    @include vr.vr(
         $padding: 2 null,
         $offset : 1
     );
@@ -310,7 +310,7 @@ body > header {
 // Demo
 // =============================================================================
 .demo {
-    @include vr(
+    @include vr.vr(
         $padding: 3 null 1 null
     );
 
@@ -319,7 +319,7 @@ body > header {
     }
 
     iframe {
-        @include vr(
+        @include vr.vr(
             $height: 600px
         );
 
@@ -359,13 +359,13 @@ body > footer {
     }
 
     body > header {
-        @include vr(
+        @include vr.vr(
             $margin-top: 3
         );
     }
 
     h1 {
-        @include vr(
+        @include vr.vr(
             $font-size: 5
         );
     }
@@ -373,7 +373,7 @@ body > footer {
     // Left align checkbox
     .intro {
         .grid-toggle-wrap {
-            @include vr(
+            @include vr.vr(
                 $margin-top: 1
             );
 
