@@ -17,7 +17,7 @@
 @include vr.reset();
 
 body {
-    @include vr.vr($padding-bottom: 1);
+    @include vr.set($padding-bottom: 1);
     @include vr.grid();
 
     padding-right: 3%;
@@ -30,13 +30,13 @@ body {
 // Height: Fixed Unit (px)
 // -----------------------------------------------------------------------------
 .test-height-100 {
-    @include vr.vr($height: 100px);
+    @include vr.set($height: 100px);
 }
 .test-height-150 {
-    @include vr.vr($height: 150px);
+    @include vr.set($height: 150px);
 }
 .test-height-200 {
-    @include vr.vr($height: 200px);
+    @include vr.set($height: 200px);
 }
 
 // Border Offsets
@@ -67,44 +67,44 @@ $test-border-width: 3px;
 
 // Offset Only
 .test-offset {
-    @include vr.vr($offset: $test-border-width);
+    @include vr.set($offset: $test-border-width);
 }
 .test-offset-top {
-    @include vr.vr($offset-top: $test-border-width);
+    @include vr.set($offset-top: $test-border-width);
 }
 .test-offset-bottom {
-    @include vr.vr($offset-bottom: $test-border-width);
+    @include vr.set($offset-bottom: $test-border-width);
 }
 
 // Height
 .test-offset-height {
-    @include vr.vr($height: 2, $offset: $test-border-width);
+    @include vr.set($height: 2, $offset: $test-border-width);
 }
 .test-offset-height-top {
-    @include vr.vr($height: 2, $offset-top: $test-border-width);
+    @include vr.set($height: 2, $offset-top: $test-border-width);
 }
 .test-offset-height-bottom {
-    @include vr.vr($height: 2, $offset-bottom: $test-border-width);
+    @include vr.set($height: 2, $offset-bottom: $test-border-width);
 }
 
 // Margin
 .test-offset-margin {
-    @include vr.vr($margin-top: 1, $margin-bottom: 1, $offset: $test-border-width);
+    @include vr.set($margin-top: 1, $margin-bottom: 1, $offset: $test-border-width);
 }
 .test-offset-margin-top {
-    @include vr.vr($margin-top: 1, $offset-top: $test-border-width);
+    @include vr.set($margin-top: 1, $offset-top: $test-border-width);
 }
 .test-offset-margin-bottom {
-    @include vr.vr($margin-bottom: 1, $offset-bottom: $test-border-width);
+    @include vr.set($margin-bottom: 1, $offset-bottom: $test-border-width);
 }
 
 // Padding
 .test-offset-padding {
-    @include vr.vr($padding-top: 1, $padding-bottom: 1, $offset: $test-border-width);
+    @include vr.set($padding-top: 1, $padding-bottom: 1, $offset: $test-border-width);
 }
 .test-offset-padding-top {
-    @include vr.vr($padding-top: 1, $offset-top: $test-border-width);
+    @include vr.set($padding-top: 1, $offset-top: $test-border-width);
 }
 .test-offset-padding-bottom {
-    @include vr.vr($padding-bottom: 1, $offset-bottom: $test-border-width);
+    @include vr.set($padding-bottom: 1, $offset-bottom: $test-border-width);
 }

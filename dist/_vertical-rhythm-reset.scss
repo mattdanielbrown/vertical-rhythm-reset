@@ -55,7 +55,7 @@ $box-sizing: border-box !default;
 ///
 /// @prop {Number|String} [width].modular-scale - Modular type scale
 ///   This value determines the modular type scale used to calculate unitless
-///   font-size values passed to the `vr()` mixin and the CSS values generated
+///   font-size values passed to the `set()` mixin and the CSS values generated
 ///   by the `$helper` map. See the `$modular-scale-map` variable for a
 ///   complete list of modular scale names.
 ///
@@ -200,7 +200,7 @@ $breakpoints: (
 ///   <div class="vr-offset-top-1">...</div>
 ///   <div class="vr-offset-bottom-1">...</div>
 ///
-/// @see vr
+/// @see set
 $helpers: (
     font-size: (
         count : 5,
@@ -286,7 +286,7 @@ $line-height: 1.5 !default;
 /// Default modular type scale.
 ///
 /// This value determines the modular type scale used to calculate unitless
-/// font-size values passed to the `vr()` mixin and the CSS values generated
+/// font-size values passed to the `set()` mixin and the CSS values generated
 /// by the `$helper` map. See the `$modular-scale-map` variable for a
 /// complete list of modular scale names.
 ///
@@ -335,11 +335,11 @@ $_vr-is-root-reset: false;
 // Example:
 // h1 {
 //   /* Will generate media queries from $breakpoints map */
-//   @include vr(font-size: 1);
+//   @include set(font-size: 1);
 //
 //   @media (min-width: [custom value]) {
 //     /* Will NOT generate media queries from $breakpoints map */
-//     @include vr(font-size: 2);
+//     @include set(font-size: 2);
 //   }
 // }
 $_vr-rendered: ();
@@ -662,7 +662,7 @@ $_vr-border-color: #808080;
 /// @example scss SCSS
 ///   // Example of setting vertical rhythm properties
 ///   div {
-///     @include vr(
+///     @include set(
 ///       $font-size     : 1,
 ///       $height        : 2,
 ///       $margin-top    : 1,
@@ -678,7 +678,7 @@ $_vr-border-color: #808080;
 ///
 ///   // Equivalent example using shorthand arguments
 ///   div {
-///     @include vr(
+///     @include set(
 ///       $font-size: 1,
 ///       $height   : 2,
 ///       $margin   : 1 0, // top|bottom: 1, right|left: 0
@@ -688,7 +688,7 @@ $_vr-border-color: #808080;
 ///
 ///     border: 3px solid red;
 ///   }
-@mixin vr($font-size : null,
+@mixin set($font-size : null,
     $line-height : null,
     $height : null,
     $width : null,
@@ -1019,7 +1019,7 @@ $_vr-border-color: #808080;
             // Generate recalculated rules
             @if not $is-root and ($is-new-multiplier or $is-new-line-height or $is-new-modular-scale) {
                 @media (min-width: #{$breakpoint}) {
-                    @include vr($font-size,
+                    @include set($font-size,
                         $line-height,
                         $height,
                         $width,
@@ -1617,30 +1617,30 @@ $_vr-border-color: #808080;
                 input:not([type=radio]):not([type=checkbox]),
                 option,
                 select:not([multiple]) {
-                    @include vr($height: 1, $is-breakpoint: true, $settings: $settings);
+                    @include set($height: 1, $is-breakpoint: true, $settings: $settings);
                 }
 
                 audio {
-                    @include vr($height: 2, $is-breakpoint: true, $settings: $settings);
+                    @include set($height: 2, $is-breakpoint: true, $settings: $settings);
                 }
 
                 hr {
-                    @include vr($height: 2, $is-breakpoint: true, $settings: $settings);
+                    @include set($height: 2, $is-breakpoint: true, $settings: $settings);
                 }
 
                 select[multiple],
                 textarea {
-                    @include vr($height: 4, $is-breakpoint: true, $settings: $settings);
+                    @include set($height: 4, $is-breakpoint: true, $settings: $settings);
                 }
 
                 iframe,
                 video {
-                    @include vr($height: 8, $is-breakpoint: true, $settings: $settings);
+                    @include set($height: 8, $is-breakpoint: true, $settings: $settings);
                 }
 
                 // Margins
                 h1 {
-                    @include vr($margin-top: 0, $margin-bottom: 1, $is-breakpoint: true, $settings: $settings);
+                    @include set($margin-top: 0, $margin-bottom: 1, $is-breakpoint: true, $settings: $settings);
                 }
 
                 blockquote,
@@ -1656,11 +1656,11 @@ $_vr-border-color: #808080;
                 pre,
                 table,
                 ul {
-                    @include vr($margin-top: 1, $margin-bottom: 1, $is-breakpoint: true, $settings: $settings);
+                    @include set($margin-top: 1, $margin-bottom: 1, $is-breakpoint: true, $settings: $settings);
                 }
 
                 fieldset {
-                    @include vr($margin: 1 0, $offset-bottom: 1px, $is-breakpoint: true, $settings: $settings);
+                    @include set($margin: 1 0, $offset-bottom: 1px, $is-breakpoint: true, $settings: $settings);
                     width: 100%;
                 }
             }
@@ -1668,27 +1668,27 @@ $_vr-border-color: #808080;
             // Font Size
             @if $modular-scale and ($is-new-line-height or $is-new-modular-scale) {
                 h1 {
-                    @include vr($font-size: 4, $is-breakpoint: true, $settings: $settings);
+                    @include set($font-size: 4, $is-breakpoint: true, $settings: $settings);
                 }
 
                 h2 {
-                    @include vr($font-size: 3, $is-breakpoint: true, $settings: $settings);
+                    @include set($font-size: 3, $is-breakpoint: true, $settings: $settings);
                 }
 
                 h3 {
-                    @include vr($font-size: 2, $is-breakpoint: true, $settings: $settings);
+                    @include set($font-size: 2, $is-breakpoint: true, $settings: $settings);
                 }
 
                 h4 {
-                    @include vr($font-size: 1, $is-breakpoint: true, $settings: $settings);
+                    @include set($font-size: 1, $is-breakpoint: true, $settings: $settings);
                 }
 
                 h5 {
-                    @include vr($font-size: 0, $is-breakpoint: true, $settings: $settings);
+                    @include set($font-size: 0, $is-breakpoint: true, $settings: $settings);
                 }
 
                 h6 {
-                    @include vr($font-size: -1, $is-breakpoint: true, $settings: $settings);
+                    @include set($font-size: -1, $is-breakpoint: true, $settings: $settings);
                 }
             }
 
@@ -1704,7 +1704,7 @@ $_vr-border-color: #808080;
                         @if $property-key == 'font-size' and $modular-scale and ($is-new-line-height or $is-new-modular-scale) {
                             @for $i from 0 through $count {
                                 .#{$prefix}#{$i}#{$suffix} {
-                                    @include vr($font-size: $i, $is-breakpoint: true, $settings: $settings);
+                                    @include set($font-size: $i, $is-breakpoint: true, $settings: $settings);
                                 }
                             }
                         }
@@ -1714,7 +1714,7 @@ $_vr-border-color: #808080;
                             @if $property-key == 'line-height' {
                                 @for $i from 1 through $count {
                                     .#{$prefix}#{$i}#{$suffix} {
-                                        @include vr($line-height: $i, $is-breakpoint: true, $settings: $settings);
+                                        @include set($line-height: $i, $is-breakpoint: true, $settings: $settings);
                                     }
                                 }
                             }
@@ -1726,7 +1726,7 @@ $_vr-border-color: #808080;
                                     select[multiple][size="#{$i}"],
                                     textarea[rows="#{$i}"],
                                     .#{$prefix}#{$i}#{$suffix} {
-                                        @include vr($height: $i, $is-breakpoint: true, $settings: $settings);
+                                        @include set($height: $i, $is-breakpoint: true, $settings: $settings);
                                     }
                                 }
                             }
@@ -1735,7 +1735,7 @@ $_vr-border-color: #808080;
                             @if $property-key == 'width' {
                                 @for $i from 1 through $count {
                                     .#{$prefix}#{$i}#{$suffix} {
-                                        @include vr($width: $i, $is-breakpoint: true, $settings: $settings);
+                                        @include set($width: $i, $is-breakpoint: true, $settings: $settings);
                                     }
                                 }
                             }
@@ -1744,21 +1744,21 @@ $_vr-border-color: #808080;
                             @if $property-key == 'margin' {
                                 @for $i from 1 through $count {
                                     .#{$prefix}#{$i}#{$suffix} {
-                                        @include vr($margin: $i, $is-breakpoint: true, $settings: $settings);
+                                        @include set($margin: $i, $is-breakpoint: true, $settings: $settings);
                                     }
                                 }
                             }
                             @if $property-key == 'margin-top' {
                                 @for $i from 1 through $count {
                                     .#{$prefix}#{$i}#{$suffix} {
-                                        @include vr($margin-top: $i, $is-breakpoint: true, $settings: $settings);
+                                        @include set($margin-top: $i, $is-breakpoint: true, $settings: $settings);
                                     }
                                 }
                             }
                             @if $property-key == 'margin-bottom' {
                                 @for $i from 1 through $count {
                                     .#{$prefix}#{$i}#{$suffix} {
-                                        @include vr($margin-bottom: $i, $is-breakpoint: true, $settings: $settings);
+                                        @include set($margin-bottom: $i, $is-breakpoint: true, $settings: $settings);
                                     }
                                 }
                             }
@@ -1767,21 +1767,21 @@ $_vr-border-color: #808080;
                             @if $property-key == 'padding' {
                                 @for $i from 1 through $count {
                                     .#{$prefix}#{$i}#{$suffix} {
-                                        @include vr($padding: $i, $is-breakpoint: true, $settings: $settings);
+                                        @include set($padding: $i, $is-breakpoint: true, $settings: $settings);
                                     }
                                 }
                             }
                             @if $property-key == 'padding-top' {
                                 @for $i from 1 through $count {
                                     .#{$prefix}#{$i}#{$suffix} {
-                                        @include vr($padding-top: $i, $is-breakpoint: true, $settings: $settings);
+                                        @include set($padding-top: $i, $is-breakpoint: true, $settings: $settings);
                                     }
                                 }
                             }
                             @if $property-key == 'padding-bottom' {
                                 @for $i from 1 through $count {
                                     .#{$prefix}#{$i}#{$suffix} {
-                                        @include vr($padding-bottom: $i, $is-breakpoint: true, $settings: $settings);
+                                        @include set($padding-bottom: $i, $is-breakpoint: true, $settings: $settings);
                                     }
                                 }
                             }
@@ -1790,21 +1790,21 @@ $_vr-border-color: #808080;
                             @if $property-key == 'offset' {
                                 @for $i from 1 through $count {
                                     .#{$prefix}#{$i}#{$suffix} {
-                                        @include vr($offset: $i * 1px, $is-breakpoint: true, $settings: $settings);
+                                        @include set($offset: $i * 1px, $is-breakpoint: true, $settings: $settings);
                                     }
                                 }
                             }
                             @if $property-key == 'offset-top' {
                                 @for $i from 1 through $count {
                                     .#{$prefix}#{$i}#{$suffix} {
-                                        @include vr($offset-top: $i * 1px, $is-breakpoint: true, $settings: $settings);
+                                        @include set($offset-top: $i * 1px, $is-breakpoint: true, $settings: $settings);
                                     }
                                 }
                             }
                             @if $property-key == 'offset-bottom' {
                                 @for $i from 1 through $count {
                                     .#{$prefix}#{$i}#{$suffix} {
-                                        @include vr($offset-bottom: $i * 1px, $is-breakpoint: true, $settings: $settings);
+                                        @include set($offset-bottom: $i * 1px, $is-breakpoint: true, $settings: $settings);
                                     }
                                 }
                             }
@@ -1824,7 +1824,7 @@ $_vr-border-color: #808080;
         /* Vertical Rhythm Reset: Fix for mobile select[multiple] elements */
         select[multiple],
         select[multiple][size] {
-            @include vr($height: 1, $is-breakpoint: true);
+            @include set($height: 1, $is-breakpoint: true);
         }
     }
 }

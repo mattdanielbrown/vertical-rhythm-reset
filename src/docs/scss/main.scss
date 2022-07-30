@@ -94,7 +94,7 @@ h2, h4 {
 }
 
 h3, h4 {
-    @include vr.vr(
+    @include vr.set(
         $font-size: 0
     );
 }
@@ -122,7 +122,7 @@ body > footer {
 // Elements
 // =============================================================================
 .button {
-    @include vr.vr(
+    @include vr.set(
         $font-size : -1,
         $margin    : 1 auto null auto,
         $padding   : 0.5 1,
@@ -219,7 +219,7 @@ body > footer {
 
     // Container
     label {
-        @include vr.vr(
+        @include vr.set(
             $font-size: -1,
             $height   : $checkbox-height
         );
@@ -263,7 +263,7 @@ body > footer {
 // Header
 // =============================================================================
 body > header {
-    @include vr.vr(
+    @include vr.set(
         $margin-top: 2
     );
 }
@@ -271,12 +271,12 @@ body > header {
 // Intro
 // =============================================================================
 .intro {
-    @include vr.vr(
+    @include vr.set(
         $padding-bottom: 3
     );
 
     .grid-toggle-wrap {
-        @include vr.vr(
+        @include vr.set(
             $margin: 2 null
         );
         text-align: center;
@@ -290,7 +290,7 @@ body > header {
 // Features
 // =============================================================================
 .features {
-    @include vr.vr(
+    @include vr.set(
         $padding: 2 null,
         $offset : 1
     );
@@ -310,7 +310,7 @@ body > header {
 // Demo
 // =============================================================================
 .demo {
-    @include vr.vr(
+    @include vr.set(
         $padding: 3 null 1 null
     );
 
@@ -319,7 +319,7 @@ body > header {
     }
 
     iframe {
-        @include vr.vr(
+        @include vr.set(
             $height: 600px
         );
 
@@ -359,13 +359,13 @@ body > footer {
     }
 
     body > header {
-        @include vr.vr(
+        @include vr.set(
             $margin-top: 3
         );
     }
 
     h1 {
-        @include vr.vr(
+        @include vr.set(
             $font-size: 5
         );
     }
@@ -373,7 +373,7 @@ body > footer {
     // Left align checkbox
     .intro {
         .grid-toggle-wrap {
-            @include vr.vr(
+            @include vr.set(
                 $margin-top: 1
             );
 
