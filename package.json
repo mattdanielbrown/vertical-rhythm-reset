@@ -36,7 +36,7 @@
     "clean": "rimraf docs/assets/css/* docs/sassdoc/*",
     "lint": "markdownlint . --ignore node_modules",
     "prepare": "npm run clean && npm run build",
-    "serve": "browser-sync start --server 'docs' --files 'docs/*.html' 'docs/**/*.css' --no-open --no-notify",
+    "serve": "browser-sync start --server 'docs' --files 'docs/**/*' --no-open --no-notify",
     "start": "npm run serve & npm run watch",
     "test": "npm run lint",
     "watch": "npm run watch:sass & npm run watch:sassdoc",
