@@ -10,6 +10,17 @@ A Sass/SCSS library for responsive vertical rhythm grids, modular scale typograp
 
 - [Documentation](http://jhildenbiddle.github.io/vertical-rhythm-reset/)
 
+**Screenshot**
+
+<p>
+  <a href="https://jhildenbiddle.github.io/vertical-rhythm-reset">
+    <picture>
+      <source srcset="https://raw.githubusercontent.com/jhildenbiddle/vertical-rhythm-reset/main/docs/assets/img/screenshot.webp" type="image/webp">
+      <img src="https://raw.githubusercontent.com/jhildenbiddle/vertical-rhythm-reset/main/docs/assets/img/screenshot.jpg" width="810" alt="screenshot">
+    </picture>
+  </a>
+</p>
+
 ## Features
 
 - **Simplified vertical rhythm grids**<br>
