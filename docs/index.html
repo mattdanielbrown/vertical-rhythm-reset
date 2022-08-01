@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no, viewport-fit=cover">
+    <meta name="author" content="John Hildenbiddle">
+    <meta name="description" content="A Sass/SCSS library for responsive vertical rhythm grids, modular scale typography, and CSS normalization.">
+    <title>Vertical Rhythm Reset - A Sass/SCSS library for responsive vertical rhythm grids, modular scale typography, and CSS normalization.</title>
+
+    <!-- Themes (light + dark) -->
+    <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">
+    <link rel="stylesheet" media="(prefers-color-scheme: light)" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V42RNSFL2N"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        // gtag('config', 'G-V42RNSFL2N');
+    </script>
+
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --theme-hue: 340;
+            --theme-saturation: 82%;
+            --theme-lightness: 52%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script>
+        // Docsify Configuration
+        window.$docsify = {
+            // GENERAL
+            // -----------------------------------------------------------------
+            name: 'Vertical Rhythm Reset',
+            repo: 'https://github.com/jhildenbiddle/vertical-rhythm-reset',
+            homepage: 'index.md',
+            loadSidebar: 'sidebar.md',
+
+            // NAVIGATION
+            // -----------------------------------------------------------------
+            alias: {
+                '.*?/changelog': 'https://raw.githubusercontent.com/jhildenbiddle/vertical-rhythm-reset/main/CHANGELOG.md',
+            },
+            auto2top: true,
+            maxLevel: 2,
+            subMaxLevel: 2,
+
+            // PLUGINS
+            // -----------------------------------------------------------------
+            ethicalAds: {
+                eaPublisher: 'jhildenbiddle-github-io',
+            },
+            executeScript: true,
+            search: {
+                depth: 3,
+                noData: 'No results!',
+                placeholder: 'Search...'
+            }
+        };
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify-plugin-ethicalads@1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/external-script.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify-plugin-runkit@1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-scss.min.js"></script>
+</body>
+
+</html>
