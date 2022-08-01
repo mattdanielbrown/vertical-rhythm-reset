@@ -13,7 +13,9 @@ A Sass/SCSS library for responsive vertical rhythm grids, modular scale typograp
 
 ## Demo
 
-<iframe src="demo.html" frameborder="no" loading="lazy" style="height: 400px; width: 100%; border: 1px solid var(--sidebar-border-color);" title="Demo: Vertical Rhythm Reset (CSS/SCSS)"></iframe>
+<div class="app-frame mac centered" style="--padding-v: 0; --padding-h: 0;" data-title="Vertical Rhythm Reset">
+  <iframe src="demo.html" frameborder="no" loading="lazy" height="400" style="width: 100%;" title="Demo: Vertical Rhythm Reset (CSS/SCSS)"></iframe>
+</div>
 
 ## Features
 
