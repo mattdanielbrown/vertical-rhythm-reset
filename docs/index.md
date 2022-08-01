@@ -13,13 +13,7 @@ A Sass/SCSS library for responsive vertical rhythm grids, modular scale typograp
 
 ## Demo
 
-<!-- Codepen Demo -->
-<!-- cspell:disable-next-line -->
-<iframe height="450" style="width: 100%;" scrolling="no" title="Demo: Vertical Rhythm Reset (CSS/SCSS)" src="https://codepen.io/jhildenbiddle/embed/preview/wGjZLj?default-tab=result&editable=true&theme-id=light" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/jhildenbiddle/pen/wGjZLj">
-  Demo: Vertical Rhythm Reset (CSS/SCSS)</a> by John Hildenbiddle (<a href="https://codepen.io/jhildenbiddle">@jhildenbiddle</a>)
-  on <a href="https://codepen.io">CodePen</a>.
-</iframe>
+<iframe src="demo.html" frameborder="no" loading="lazy" style="height: 400px; width: 100%; border: 1px solid var(--sidebar-border-color);" title="Demo: Vertical Rhythm Reset (CSS/SCSS)"></iframe>
 
 ## Features
 
