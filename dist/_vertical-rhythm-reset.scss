@@ -77,6 +77,68 @@ $breakpoints: (
     )
 ) !default;
 
+/// Default root element font size.
+///
+/// A `:root` CSS rule will be generated that sets the root element font size to
+/// the specified value when the `reset()` mixin is called.
+///
+/// @type Number|Length(px|rem|%)
+$font-size: 14px !default;
+
+/// Default vertical rhythm grid color.
+///
+/// This value is used as the base color for the vertical rhythm grid lines,
+/// element highlights, and detail panel presentation.
+///
+/// @type Color
+$grid-color: rgb(233, 30, 99) !default;
+
+/// Default line height.
+///
+/// This value is used to calculate the vertical rhythm row height by
+/// multiplying the font-size by the line height and converting the result to a
+/// `rem`-based value. A `*` selector CSS rule is then generated when the
+/// `reset()` mixin is called that sets the default line height for all
+/// elements to this value (the equivalent of one vertical rhythm row).
+///
+/// @type Number|Length(px|rem|%)
+$line-height: 1.5 !default;
+
+/// Default modular type scale.
+///
+/// This value determines the modular type scale used to calculate unitless
+/// font-size values passed to the `set()` mixin and the CSS values generated
+/// by the `$utilities` map. See the `$modular-scale-map` variable for a
+/// complete list of modular scale names.
+///
+/// Set the value of `$modular-scale` to `false` to disable modular scale
+/// typography.
+///
+/// @type Number|String
+///
+/// @see $modular-scale-map
+$modular-scale: minor-third !default;
+
+/// A map containing modular type scale names and values graciously borrowed
+/// from http://www.modularscale.com
+///
+/// @type Map
+$modular-scale-map: (
+    minor-second    : 1.067, // Ratio = 15:16
+    major-second    : 1.125, // Ratio = 8:9
+    minor-third     : 1.2,   // Ratio = 5:6
+    major-third     : 1.25,  // Ratio = 4:5
+    perfect-fourth  : 1.333, // Ratio = 3:4
+    augmented-fourth: 1.414, // Ratio = 1:√2
+    perfect-fifth   : 1.5,   // Ratio = 2:3
+    minor-sixth     : 1.6,   // Ratio = 5:8
+    golden          : 1.618, // Ratio = 1:1.618
+    major-sixth     : 1.667, // Ratio = 3:5
+    minor-seventh   : 1.778, // Ratio = 9:16
+    major-seventh   : 1.875, // Ratio = 8:15
+    octave          : 2      // Ratio = 1:2
+) !default;
+
 /// A map used to generate vertical rhythm utility classes.
 ///
 /// Utility classes provide a convenient way to set typography and vertical
@@ -254,68 +316,6 @@ $utilities: (
         count : 5,
         prefix: "vr-offset-bottom-"
     )
-) !default;
-
-/// Default root element font size.
-///
-/// A `:root` CSS rule will be generated that sets the root element font size to
-/// the specified value when the `reset()` mixin is called.
-///
-/// @type Number|Length(px|rem|%)
-$font-size: 14px !default;
-
-/// Default vertical rhythm grid color.
-///
-/// This value is used as the base color for the vertical rhythm grid lines,
-/// element highlights, and detail panel presentation.
-///
-/// @type Color
-$grid-color: rgb(233, 30, 99) !default;
-
-/// Default line height.
-///
-/// This value is used to calculate the vertical rhythm row height by
-/// multiplying the font-size by the line height and converting the result to a
-/// `rem`-based value. A `*` selector CSS rule is then generated when the
-/// `reset()` mixin is called that sets the default line height for all
-/// elements to this value (the equivalent of one vertical rhythm row).
-///
-/// @type Number|Length(px|rem|%)
-$line-height: 1.5 !default;
-
-/// Default modular type scale.
-///
-/// This value determines the modular type scale used to calculate unitless
-/// font-size values passed to the `set()` mixin and the CSS values generated
-/// by the `$utilities` map. See the `$modular-scale-map` variable for a
-/// complete list of modular scale names.
-///
-/// Set the value of `$modular-scale` to `false` to disable modular scale
-/// typography.
-///
-/// @type Number|String
-///
-/// @see $modular-scale-map
-$modular-scale: minor-third !default;
-
-/// A map containing modular type scale names and values graciously borrowed
-/// from http://www.modularscale.com
-///
-/// @type Map
-$modular-scale-map: (
-    minor-second    : 1.067, // Ratio = 15:16
-    major-second    : 1.125, // Ratio = 8:9
-    minor-third     : 1.2,   // Ratio = 5:6
-    major-third     : 1.25,  // Ratio = 4:5
-    perfect-fourth  : 1.333, // Ratio = 3:4
-    augmented-fourth: 1.414, // Ratio = 1:√2
-    perfect-fifth   : 1.5,   // Ratio = 2:3
-    minor-sixth     : 1.6,   // Ratio = 5:8
-    golden          : 1.618, // Ratio = 1:1.618
-    major-sixth     : 1.667, // Ratio = 3:5
-    minor-seventh   : 1.778, // Ratio = 9:16
-    major-seventh   : 1.875, // Ratio = 8:15
-    octave          : 2      // Ratio = 1:2
 ) !default;
 
 
@@ -532,6 +532,124 @@ $_vr-border-color: #808080;
 
 // Mixins - Public
 // =============================================================================
+/// Renders the vertical rhythm grid lines as a background image and applies
+/// the highlight color as a semi-transparent background to all child elements.
+///
+/// @param {Color} $color [null] - Grid line and element highlight color
+/// @param {Boolean} $lines [true] - Displays vertical rhythm grid lines
+/// @param {Boolean} $highlight [true] - Sets the background color of all
+///   elements to a semi-transparent variation of the grid color specified to
+///   help verify alignment with the vertical rhythm grid.
+/// @param {Boolean} $detail [true] - Displays a floating panel with the active
+///   breakpoint width, font-size, line-height and modular scale. This is rendered
+///   as pseudo content (`:before`) on the `<body>` element.
+///
+/// @example scss SCSS
+///   @use "vertical-rhythm-reset" as vr;
+///
+///   // Call the vertical rhythm reset mixin at root
+///   @include vr.reset();
+///
+///   // Call the grid mixin
+///   body {
+///     @include vr.grid();
+///   }
+@mixin grid($color: null, $lines: true, $highlight: true, $detail: true) {
+    // Placeholder for breakpoint settings
+    $prev-font-size : _get-root(font-size);
+    $prev-line-height : _get-root(line-height);
+    $prev-grid-color : if($color, $color, _get-root(grid-color));
+    $prev-modular-scale: _get-root(modular-scale);
+
+    @each $breakpoint,
+    $settings in _get-settings() {
+        // Variables
+        $font-size : if(map.has-key($settings, font-size), _to-root-px(map.get($settings, font-size)), _to-root-px($prev-font-size));
+        $line-height : if(map.has-key($settings, line-height), _to-rem(map.get($settings, line-height), $font-size), _to-rem($prev-line-height, $font-size));
+        $modular-scale: if(map.has-key($settings, modular-scale), map.get($settings, modular-scale), $prev-modular-scale);
+        $grid-color : if(not $color and map.has-key($settings, grid-color), map.get($settings, grid-color), $prev-grid-color);
+        $media-query : if($breakpoint  !=root, "(min-width: #{$breakpoint})", false);
+
+        // Checks
+        $is-new-grid-color: if($breakpoint ==root or $grid-color  !=$prev-grid-color, true, false);
+
+        // Generate grid settings
+        @include _maybe-query($media-query) {
+            $grid-size : math.round(_strip-unit($line-height) * _strip-unit($font-size));
+            $grid-line-color : color.adjust($grid-color, $alpha: -0.5);
+            $grid-highlight-color: color.adjust($grid-color, $alpha: -0.9);
+            $grid-text-color : if(color.lightness($grid-color) > 52, #000, #fff);
+
+            // Display detail as pseudo content
+            @if $detail {
+                &:before {
+                    /* Vertical Rhythm Reset: Grid Detail */
+                    content: "Vertical Rhythm Reset\A\
+ --------------------------\A\
+ breakpoint   : #{$breakpoint}\A\
+ font-size    : #{$font-size}\A\
+ line-height  : #{math.round($font-size * _strip-unit($line-height))}\A\
+ modular-scale: #{$modular-scale}" !important;
+                    display: table !important; // Fix for flexbox
+                    position: fixed !important;
+                    z-index: 2147483647 !important;
+                    bottom: 1vh !important;
+                    right: 1vh !important;
+                    padding: 10px 20px !important;
+                    background: color.adjust($grid-color, $alpha: -0.2) !important;
+                    border-radius: 4px !important;
+                    color: $grid-text-color  !important;
+                    font-family: "Lucida Console", "Consolas", Monaco, monospace !important;
+                    font-size: 12px !important;
+                    line-height: 20px !important;
+                    white-space: pre !important;
+                }
+            }
+
+            // Grid lines
+            @if $lines {
+                $grid-svg: "data:image/svg+xml;charset=utf8,\
+%3Csvg width='#{$grid-size}px' height='#{$grid-size}px' viewBox='0 0 #{$grid-size} #{$grid-size}' xmlns='http://www.w3.org/2000/svg'%3E\
+%3Cdefs%3E\
+%3Cpattern id='grid' height='#{$grid-size}' width='1000' patternUnits='userSpaceOnUse'%3E\
+%3Cpath d='M #{$grid-size} 0 L -1 0 -1 #{$grid-size}' fill='none' stroke='#{$grid-line-color}' stroke-width='1' /%3E\
+%3C/pattern%3E\
+%3C/defs%3E\
+%3Crect width='#{$grid-size}px' height='#{$grid-size}px' fill='url(%23grid)' /%3E\
+%3C/svg%3E";
+
+                /* Vertical Rhythm Reset: Grid Lines */
+                background-image: url($grid-svg) !important;
+                background-color: transparent !important;
+            }
+
+            // Grid highlight
+            @if $highlight {
+                @if $is-new-grid-color {
+                    *:not(hr) {
+                        /* Vertical Rhythm Reset: Grid Highlight */
+                        background-color: $grid-highlight-color  !important;
+                    }
+                }
+            }
+
+            // Hide the background so the grid lines will be visible
+            @else if $lines {
+                *:not(hr) {
+                    /* Vertical Rhythm Reset: Grid Highlight */
+                    background: transparent !important;
+                }
+            }
+        }
+
+        // Store settings for comparison during next iteration
+        $prev-font-size : $font-size;
+        $prev-line-height : $line-height;
+        $prev-grid-color : $grid-color;
+        $prev-modular-scale: $modular-scale;
+    }
+}
+
 /// Generates the CSS reset/normalization, vertical rhythm grid and CSS utility
 /// classes along with media queries and recalculated breakpoint / values.
 ///
@@ -1717,123 +1835,5 @@ $_vr-border-color: #808080;
 
         // Add selector to rendered list
         $_vr-rendered: list.append($_vr-rendered, $selector) !global;
-    }
-}
-
-/// Renders the vertical rhythm grid lines as a background image and applies
-/// the highlight color as a semi-transparent background to all child elements.
-///
-/// @param {Color} $color [null] - Grid line and element highlight color
-/// @param {Boolean} $lines [true] - Displays vertical rhythm grid lines
-/// @param {Boolean} $highlight [true] - Sets the background color of all
-///   elements to a semi-transparent variation of the grid color specified to
-///   help verify alignment with the vertical rhythm grid.
-/// @param {Boolean} $detail [true] - Displays a floating panel with the active
-///   breakpoint width, font-size, line-height and modular scale. This is rendered
-///   as pseudo content (`:before`) on the `<body>` element.
-///
-/// @example scss SCSS
-///   @use "vertical-rhythm-reset" as vr;
-///
-///   // Call the vertical rhythm reset mixin at root
-///   @include vr.reset();
-///
-///   // Call the grid mixin
-///   body {
-///     @include vr.grid();
-///   }
-@mixin grid($color: null, $lines: true, $highlight: true, $detail: true) {
-    // Placeholder for breakpoint settings
-    $prev-font-size : _get-root(font-size);
-    $prev-line-height : _get-root(line-height);
-    $prev-grid-color : if($color, $color, _get-root(grid-color));
-    $prev-modular-scale: _get-root(modular-scale);
-
-    @each $breakpoint,
-    $settings in _get-settings() {
-        // Variables
-        $font-size : if(map.has-key($settings, font-size), _to-root-px(map.get($settings, font-size)), _to-root-px($prev-font-size));
-        $line-height : if(map.has-key($settings, line-height), _to-rem(map.get($settings, line-height), $font-size), _to-rem($prev-line-height, $font-size));
-        $modular-scale: if(map.has-key($settings, modular-scale), map.get($settings, modular-scale), $prev-modular-scale);
-        $grid-color : if(not $color and map.has-key($settings, grid-color), map.get($settings, grid-color), $prev-grid-color);
-        $media-query : if($breakpoint  !=root, "(min-width: #{$breakpoint})", false);
-
-        // Checks
-        $is-new-grid-color: if($breakpoint ==root or $grid-color  !=$prev-grid-color, true, false);
-
-        // Generate grid settings
-        @include _maybe-query($media-query) {
-            $grid-size : math.round(_strip-unit($line-height) * _strip-unit($font-size));
-            $grid-line-color : color.adjust($grid-color, $alpha: -0.5);
-            $grid-highlight-color: color.adjust($grid-color, $alpha: -0.9);
-            $grid-text-color : if(color.lightness($grid-color) > 52, #000, #fff);
-
-            // Display detail as pseudo content
-            @if $detail {
-                &:before {
-                    /* Vertical Rhythm Reset: Grid Detail */
-                    content: "Vertical Rhythm Reset\A\
- --------------------------\A\
- breakpoint   : #{$breakpoint}\A\
- font-size    : #{$font-size}\A\
- line-height  : #{math.round($font-size * _strip-unit($line-height))}\A\
- modular-scale: #{$modular-scale}" !important;
-                    display: table !important; // Fix for flexbox
-                    position: fixed !important;
-                    z-index: 2147483647 !important;
-                    bottom: 1vh !important;
-                    right: 1vh !important;
-                    padding: 10px 20px !important;
-                    background: color.adjust($grid-color, $alpha: -0.2) !important;
-                    border-radius: 4px !important;
-                    color: $grid-text-color  !important;
-                    font-family: "Lucida Console", "Consolas", Monaco, monospace !important;
-                    font-size: 12px !important;
-                    line-height: 20px !important;
-                    white-space: pre !important;
-                }
-            }
-
-            // Grid lines
-            @if $lines {
-                $grid-svg: "data:image/svg+xml;charset=utf8,\
-%3Csvg width='#{$grid-size}px' height='#{$grid-size}px' viewBox='0 0 #{$grid-size} #{$grid-size}' xmlns='http://www.w3.org/2000/svg'%3E\
-%3Cdefs%3E\
-%3Cpattern id='grid' height='#{$grid-size}' width='1000' patternUnits='userSpaceOnUse'%3E\
-%3Cpath d='M #{$grid-size} 0 L -1 0 -1 #{$grid-size}' fill='none' stroke='#{$grid-line-color}' stroke-width='1' /%3E\
-%3C/pattern%3E\
-%3C/defs%3E\
-%3Crect width='#{$grid-size}px' height='#{$grid-size}px' fill='url(%23grid)' /%3E\
-%3C/svg%3E";
-
-                /* Vertical Rhythm Reset: Grid Lines */
-                background-image: url($grid-svg) !important;
-                background-color: transparent !important;
-            }
-
-            // Grid highlight
-            @if $highlight {
-                @if $is-new-grid-color {
-                    *:not(hr) {
-                        /* Vertical Rhythm Reset: Grid Highlight */
-                        background-color: $grid-highlight-color  !important;
-                    }
-                }
-            }
-
-            // Hide the background so the grid lines will be visible
-            @else if $lines {
-                *:not(hr) {
-                    /* Vertical Rhythm Reset: Grid Highlight */
-                    background: transparent !important;
-                }
-            }
-        }
-
-        // Store settings for comparison during next iteration
-        $prev-font-size : $font-size;
-        $prev-line-height : $line-height;
-        $prev-grid-color : $grid-color;
-        $prev-modular-scale: $modular-scale;
     }
 }
