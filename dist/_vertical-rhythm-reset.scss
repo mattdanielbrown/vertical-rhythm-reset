@@ -56,7 +56,7 @@ $box-sizing: border-box !default;
 /// @prop {Number|String} [width].modular-scale - Modular type scale
 ///   This value determines the modular type scale used to calculate unitless
 ///   font-size values passed to the `set()` mixin and the CSS values generated
-///   by the `$helper` map. See the `$modular-scale-map` variable for a
+///   by the `$utilities` map. See the `$modular-scale-map` variable for a
 ///   complete list of modular scale names.
 ///
 /// @prop {Color} [width].grid-color - Vertical rhythm grid color
@@ -77,19 +77,19 @@ $breakpoints: (
     )
 ) !default;
 
-/// A map used to generate vertical rhythm helper CSS rules and classes.
+/// A map used to generate vertical rhythm utility classes.
 ///
-/// Helper rules and classes provide a convenient way to set typography and
-/// vertical rhythm properties using CSS class names and HTML properties. This
-/// makes it easy to quickly change the font size, specify the height, or add
-/// margins and padding to HTML elements without creating new CSS/SCSS rules.
+/// Utility classes provide a convenient way to set typography and vertical
+/// rhythm properties using CSS class names and HTML properties. This makes it
+/// easy to quickly change the font size, specify the height, or add margins and
+/// padding to HTML elements without creating new CSS/SCSS rules.
 ///
 /// **Customization**
 /// - Make a copy of the default map above as your starting point.
 /// - Remove the `!default` variable declaration if copying-and-pasting map.
 /// - Modify the map keys and values as needed (see **Map Structure** below)
-/// - Set the value of `$helpers` to `false` to prevent helper classes and
-///   rules from being auto-generated.
+/// - Set the value of `$utilities` to `false` to prevent utility classes from
+///   being auto-generated.
 ///
 /// **Known Issues**
 /// - Offset classes apply a negative bottom margin to the element. When an
@@ -115,9 +115,9 @@ $breakpoints: (
 ///
 /// @example css CSS
 ///   /*
-///     Example output from $helpers map with default settings.
+///     Example output from $utilities map with default settings.
 ///     Showing first iteration only. Pattern will continue for
-///     each helper type based on the $count specified.
+///     each utility type based on the $count specified.
 ///   */
 ///
 ///   /* Font Size */
@@ -201,7 +201,7 @@ $breakpoints: (
 ///   <div class="vr-offset-bottom-1">...</div>
 ///
 /// @see set
-$helpers: (
+$utilities: (
     font-size: (
         count : 5,
         prefix: "vr-font-size-"
@@ -287,7 +287,7 @@ $line-height: 1.5 !default;
 ///
 /// This value determines the modular type scale used to calculate unitless
 /// font-size values passed to the `set()` mixin and the CSS values generated
-/// by the `$helper` map. See the `$modular-scale-map` variable for a
+/// by the `$utilities` map. See the `$modular-scale-map` variable for a
 /// complete list of modular scale names.
 ///
 /// Set the value of `$modular-scale` to `false` to disable modular scale
@@ -532,14 +532,13 @@ $_vr-border-color: #808080;
 
 // Mixins - Public
 // =============================================================================
-/// Generates the CSS reset/normalization, vertical rhythm grid and CSS helper
-/// rules and classes along with media queries and recalculated breakpoint
-/// values.
+/// Generates the CSS reset/normalization, vertical rhythm grid and CSS utility
+/// classes along with media queries and recalculated breakpoint / values.
 ///
 /// This mixin is typically called at the root of your SCSS file without
 /// any arguments specified. This allows the mixin to use the default values
 /// specified with `$font-size`, `$line-height`, `$modular-scale`,
-/// `$grid-color`, `$breakpoints` and `$helpers` variables. As a
+/// `$grid-color`, `$breakpoints` and `$utilities` variables. As a
 /// convenience, these same global variables can be set using mixin arguments.
 ///
 /// @param {String} $box-sizing  [$box-sizing]
@@ -554,8 +553,8 @@ $_vr-border-color: #808080;
 ///   See `$grid-color`
 /// @param {Map|false} $breakpoints               [$breakpoints]
 ///   See `$breakpoints`
-/// @param {Map|false} $helpers                   [$helpers]
-///   See `$helpers`
+/// @param {Map|false} $utilities                   [$utilities]
+///   See `$utilities`
 ///
 /// @example scss SCSS: Reset using global variables
 ///   @use "vertical-rhythm-reset" as vr;
@@ -567,7 +566,7 @@ $_vr-border-color: #808080;
 ///   $modular-scale: minor-third;
 ///   $grid-color   : rgb(233, 30, 99);
 ///   $breakpoints  : (...);
-///   $helpers      : (...);
+///   $utilities      : (...);
 ///
 ///   // Call the mixin at root
 ///   @include vr.reset();
@@ -585,7 +584,7 @@ $_vr-border-color: #808080;
 ///     $modular-scale: minor-third,
 ///     $grid-color   : rgb(233, 30, 99),
 ///     $breakpoints  : (...),
-///     $helpers      : (...)
+///     $utilities      : (...)
 ///   );
 @mixin reset(
     $box-sizing        : $box-sizing,
@@ -594,7 +593,7 @@ $_vr-border-color: #808080;
     $modular-scale     : $modular-scale,
     $grid-color        : $grid-color,
     $breakpoints       : $breakpoints,
-    $helpers           : $helpers) {
+    $utilities           : $utilities) {
     // Update globals
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     $box-sizing   : $box-sizing    !global;
@@ -603,7 +602,7 @@ $_vr-border-color: #808080;
     $modular-scale: $modular-scale !global;
     $grid-color   : $grid-color    !global;
     $breakpoints  : $breakpoints   !global;
-    $helpers      : $helpers       !global;
+    $utilities      : $utilities       !global;
 
     // Variables
     $selector: &;
@@ -1061,9 +1060,9 @@ $_vr-border-color: #808080;
                 }
             }
 
-            // Generate vertical rhythm CSS helpers
-            @if meta.type-of($helpers) == 'map' {
-                @each $property-key, $property-map in $helpers {
+            // Generate vertical rhythm CSS utility classes
+            @if meta.type-of($utilities) == 'map' {
+                @each $property-key, $property-map in $utilities {
                     $count : map.get($property-map, count);
                     $prefix: map.get($property-map, prefix);
                     $suffix: map.get($property-map, suffix);
