@@ -8,7 +8,7 @@
 
 A Sass/SCSS library for responsive vertical rhythm grids, modular scale typography, and CSS normalization.
 
-- [Documentation](http://jhildenbiddle.github.io/vertical-rhythm-reset/)
+- [Documentation](https://jhildenbiddle.github.io/vertical-rhythm-reset/)
 
 **Screenshot**
 
@@ -60,7 +60,7 @@ See the [documentation site](https://jhildenbiddle.github.io/vertical-rhythm-res
 ## Credits & Attribution
 
 - [Normalize.css](https://necolas.github.io/normalize.css) by Nicolas Gallagher and Jonathan Neal.
-- [Modular Scale](http://www.modularscale.com/) by Scott Vellum and Tim Brown.
+- [Modular Scale](https://www.modularscale.com/) by Scott Vellum and Tim Brown.
 
 ## Contact & Support
 
