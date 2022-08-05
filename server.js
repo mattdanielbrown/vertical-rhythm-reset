@@ -1,7 +1,6 @@
 // Dependencies
 // =============================================================================
 const browserSync = require('browser-sync').create();
-const compression = require('compression');
 
 browserSync.init({
     files: [
@@ -22,7 +21,6 @@ browserSync.init({
             './docs/'
         ],
         middleware: [
-            compression()
         ],
         routes: {
             '/CHANGELOG.md': './CHANGELOG.md'
