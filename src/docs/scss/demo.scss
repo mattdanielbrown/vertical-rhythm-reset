@@ -1,0 +1,222 @@
+@charset "utf-8";
+
+@use "vertical-rhythm-reset" as vr;
+
+// Variables
+// =============================================================================
+// vr.$font-size    : 15px;
+// vr.$line-height  : 1.25;
+// vr.$modular-scale: false;
+vr.$breakpoints: (
+    60em: ( // 960px
+        font-size : 16px,
+        grid-color : blue
+    ),
+    80em: ( // 1280px
+        font-size : 18px,
+        line-height : 1.8,
+        modular-scale: major-third,
+        grid-color : purple
+    )
+);
+// vr.$helpers      : false;
+
+// Base
+// =============================================================================
+@include vr.reset();
+
+body {
+    @include vr.set($padding-bottom: 1);
+
+    padding-right: 3%;
+    padding-left: 3%;
+    background: #fff;
+
+    // Vertical Rhythm Grid
+    &.show-grid {
+        @include vr.grid();
+    }
+}
+
+.checkbox {
+    $checkbox-height             : 1.5rem;
+    $checkbox-width              : 2.5rem;
+    $checkbox-transition         : 0.25s;
+    $checkbox-inactive-offset    : 4px;
+    $checkbox-inactive-border    : 2px solid #ccc;
+    $checkbox-inactive-background: #fff;
+    $checkbox-inactive-handle    : #ccc;
+    $checkbox-active-offset      : 3px;
+    $checkbox-active-border      : 2px solid #1976d2;;
+    $checkbox-active-background  : #1976d2;;
+    $checkbox-active-handle      : #fff;
+
+    display: inline-block;
+    position: relative;
+
+    &,
+    & input,
+    & label {
+        display: inline-block;
+    }
+
+    &+.checkbox {
+        margin-left: 1em;
+    }
+
+    // Invisible overlay
+    input {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        height: 100%;
+
+        width: 100%;
+        border: 0;
+        background: red;
+        margin: 0;
+        opacity: 0;
+        cursor: pointer;
+        -webkit-appearance: none;
+        -ms-appearance: none;
+        appearance: none;
+
+        // Active
+        &:checked+label {
+
+            // Container
+            &:before {
+                border: if($checkbox-active-border, $checkbox-active-border, null);
+                background: $checkbox-active-background;
+            }
+
+            // Handle
+            &:after {
+                left: #{calc($checkbox-width - $checkbox-height + $checkbox-active-offset)};
+                height: #{calc($checkbox-height - ($checkbox-active-offset * 2))};
+                width: #{calc($checkbox-height - ($checkbox-active-offset * 2))};
+
+                background: $checkbox-active-handle;
+            }
+        }
+    }
+
+    // Container
+    label {
+        position: relative;
+        padding-left: calc(#{$checkbox-width} + 0.625rem);
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            border-radius: 100vw;
+            transform: translateY(-50%);
+            transition: all $checkbox-transition;
+        }
+
+        // Container
+        &:before {
+            left: 0;
+            height: $checkbox-height;
+            width: $checkbox-width;
+            margin-right: 0.35em;
+            border: if($checkbox-inactive-border, $checkbox-inactive-border, null);
+            background: $checkbox-inactive-background;
+        }
+
+        // Handle
+        &:after {
+            left: $checkbox-inactive-offset;
+            height: #{calc($checkbox-height - ($checkbox-inactive-offset * 2))};
+            width: #{calc($checkbox-height - ($checkbox-inactive-offset * 2))};
+            background: $checkbox-inactive-handle;
+        }
+    }
+}
+
+// Tests
+// =============================================================================
+// Height: Fixed Unit (px)
+// -----------------------------------------------------------------------------
+.test-height-100 {
+    @include vr.set($height: 100px);
+}
+.test-height-150 {
+    @include vr.set($height: 150px);
+}
+.test-height-200 {
+    @include vr.set($height: 200px);
+}
+
+// Border Offsets
+// -----------------------------------------------------------------------------
+$test-border-width: 3px;
+
+// Borders
+.test-offset,
+.test-offset-height,
+.test-offset-margin,
+.test-offset-padding {
+    border: $test-border-width solid black;
+}
+
+.test-offset-top,
+.test-offset-height-top,
+.test-offset-margin-top,
+.test-offset-padding-top {
+    border-top: $test-border-width solid black;
+}
+
+.test-offset-bottom,
+.test-offset-height-bottom,
+.test-offset-margin-bottom,
+.test-offset-padding-bottom {
+    border-bottom: $test-border-width solid black;
+}
+
+// Offset Only
+.test-offset {
+    @include vr.set($offset: $test-border-width);
+}
+.test-offset-top {
+    @include vr.set($offset-top: $test-border-width);
+}
+.test-offset-bottom {
+    @include vr.set($offset-bottom: $test-border-width);
+}
+
+// Height
+.test-offset-height {
+    @include vr.set($height: 2, $offset: $test-border-width);
+}
+.test-offset-height-top {
+    @include vr.set($height: 2, $offset-top: $test-border-width);
+}
+.test-offset-height-bottom {
+    @include vr.set($height: 2, $offset-bottom: $test-border-width);
+}
+
+// Margin
+.test-offset-margin {
+    @include vr.set($margin-top: 1, $margin-bottom: 1, $offset: $test-border-width);
+}
+.test-offset-margin-top {
+    @include vr.set($margin-top: 1, $offset-top: $test-border-width);
+}
+.test-offset-margin-bottom {
+    @include vr.set($margin-bottom: 1, $offset-bottom: $test-border-width);
+}
+
+// Padding
+.test-offset-padding {
+    @include vr.set($padding-top: 1, $padding-bottom: 1, $offset: $test-border-width);
+}
+.test-offset-padding-top {
+    @include vr.set($padding-top: 1, $offset-top: $test-border-width);
+}
+.test-offset-padding-bottom {
+    @include vr.set($padding-bottom: 1, $offset-bottom: $test-border-width);
+}

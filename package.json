@@ -1,7 +1,7 @@
 {
   "name": "vertical-rhythm-reset",
-  "version": "1.1.0",
-  "description": "The perfect starting point for CSS normalization, responsive vertical rhythm grids and modular scale typography. ",
+  "version": "2.0.0",
+  "description": "A Sass/SCSS library for responsive vertical rhythm grids, modular scale typography, and CSS normalization.",
   "author": "John Hildenbiddle",
   "license": "MIT",
   "homepage": "http://jhildenbiddle.github.io/vertical-rhythm-reset/",
@@ -13,45 +13,43 @@
     "url": "https://github.com/jhildenbiddle/vertical-rhythm-reset/issues"
   },
   "keywords": [
-    "vertical",
-    "rhythm",
-    "grid",
-    "vertical rhythm",
-    "vertical rhythm reset",
-    "vertical-rhythm",
-    "vertical-rhythm-reset",
-    "vertical grid",
-    "modular",
-    "scale",
-    "typography",
-    "modular scale",
-    "modular scale typography",
-    "modular typography",
     "css",
-    "reset",
+    "grid",
+    "mixin",
+    "modular",
     "normalize",
-    "css reset",
-    "css normalize",
-    "font",
-    "font size",
+    "reset",
+    "rhythm",
     "sass",
-    "scss"
+    "scale",
+    "scss",
+    "vertical"
+  ],
+  "files": [
+    "dist"
   ],
   "main": "dist/_vertical-rhythm-reset.scss",
   "scripts": {
-    "build": "npm run sass-build & npm run sassdoc-build",
-    "deploy": "gh-pages -d site",
-    "sass-build": "node-sass -wr --include-path dist --output-style expanded site/assets/sass -o site/assets/css",
-    "sassdoc-build": "nodemon --watch dist -e scss -x 'sassdoc ./dist -d ./site/sassdoc'",
-    "serve": "browser-sync start --server 'site' --files 'site/**/*.{css,html}' --no-open --no-notify",
-    "start": "npm run serve & npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run build:sass & npm run build:sassdoc",
+    "build:sass": "sass src/docs/scss:docs/assets/css --style=expanded --load-path=dist",
+    "build:sassdoc": "sassdoc ./dist -d ./docs/sassdoc",
+    "clean": "rimraf docs/assets/css/* docs/sassdoc/*",
+    "lint": "markdownlint . --ignore node_modules",
+    "prepare": "npm run clean && npm run build",
+    "serve": "node server.js",
+    "start": "npm run serve & npm run watch",
+    "test": "npm run lint",
+    "watch": "npm run watch:sass & npm run watch:sassdoc",
+    "watch:sass": "npm run build:sass && npm run build:sass -- -w",
+    "watch:sassdoc": "nodemon --watch dist -e scss -x npm run build:sassdoc",
+    "version": "npm run prepare && npm run test"
   },
   "devDependencies": {
-    "browser-sync": "^2.12.3",
-    "gh-pages": "^0.11.0",
-    "node-sass": "^3.4.2",
-    "nodemon": "^1.9.1",
-    "sassdoc": "^2.1.20"
+    "browser-sync": "^2.27.10",
+    "markdownlint-cli": "^0.32.1",
+    "nodemon": "^2.0.19",
+    "rimraf": "^3.0.2",
+    "sass": "^1.54.0",
+    "sassdoc": "^2.7.4"
   }
 }
