@@ -1,5 +1,18 @@
 # Change Log
 
+## 2.0.1
+
+*2024-02-06*
+
+- Fix GitHub workflow badge
+
+## 2.0.0
+
+*2022-08-01*
+
+- Add support for Dart Sass
+- Remove support for Ruby Sass and LibSass
+
 ## 1.2.0
 
 *2019.01.08*
