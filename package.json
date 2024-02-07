@@ -42,7 +42,7 @@
     "watch": "npm run watch:sass & npm run watch:sassdoc",
     "watch:sass": "npm run build:sass && npm run build:sass -- -w",
     "watch:sassdoc": "nodemon --watch dist -e scss -x npm run build:sassdoc",
-    "version": "npm run prepare && npm run test"
+    "version": "npm run prepare && npm run lint && npm run test && git add -A docs/sassdoc"
   },
   "devDependencies": {
     "browser-sync": "^2.27.10",
