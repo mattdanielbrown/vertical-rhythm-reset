@@ -1,7 +1,7 @@
 # vertical-rhythm-reset
 
 [![NPM](https://img.shields.io/npm/v/vertical-rhythm-reset.svg?style=flat-square)](https://www.npmjs.com/package/vertical-rhythm-reset)
-[![GitHub Workflow Status (master)](https://img.shields.io/github/workflow/status/jhildenbiddle/vertical-rhythm-reset/Build/master?label=checks&style=flat-square)](https://github.com/jhildenbiddle/vertical-rhythm-reset/actions?query=branch%3Amaster+)
+[![GitHub Workflow Status (master)](https://img.shields.io/github/actions/workflow/status/jhildenbiddle/vertical-rhythm-reset/test.yml?branch=master&label=checks&style=flat-square)](https://github.com/jhildenbiddle/vertical-rhythm-reset/actions?query=branch%3Amaster+)
 [![Codacy grade](https://img.shields.io/codacy/grade/01917626fcc14886ac621c1928a2961f?style=flat-square)](https://app.codacy.com/gh/jhildenbiddle/vertical-rhythm-reset/dashboard)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://github.com/jhildenbiddle/vertical-rhythm-reset/blob/master/LICENSE)
 [![Sponsor this project](https://img.shields.io/static/v1?style=flat-square&label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/jhildenbiddle)
