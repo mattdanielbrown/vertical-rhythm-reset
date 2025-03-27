@@ -49,7 +49,7 @@
     "markdownlint-cli": "^0.32.1",
     "nodemon": "^2.0.19",
     "rimraf": "^3.0.2",
-    "sass": "^1.54.0",
+    "sass": "^1.79.0",
     "sassdoc": "^2.7.4"
   }
 }
